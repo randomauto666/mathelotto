@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euro - Jackpot: Mathe Lotto</title>
+    <link rel="icon" type="image/png" href="bild.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1a1545 0%, #3b3588 100%);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+            margin-bottom: 15px;
+        }
+
+        .number-box {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .number-box:hover {
+            transform: scale(1.05);
+            border-color: #3b3588;
+        }
+
+        .number-box.selected {
+            background: #FFD700;
+            border-color: #FFC700;
+            color: #000;
+        }
+
+        .info-text {
+            text-align: center;
+            color: #333;
+            margin-top: 15px;
+            line-height: 1.4;
+            font-size: 14px;
+        }
+
+        .info-text p {
+            margin: 5px 0;
+        }
+
+        .reset-btn {
+            display: block;
+            margin: 15px auto 0;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, #3b3588 0%, #5a52a5 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 53, 136, 0.4);
+        }
+
+        footer {
+            background: #0a0a1a;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer a {
+            color: #5a52a5;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #7a72c5;
+        }
+
+        .contact-page {
+            background: linear-gradient(135deg, rgba(26, 21, 69, 0.95) 0%, rgba(59, 53, 136, 0.95) 100%);
+            text-align: center;
+            color: white;
+            line-height: 2;
+            padding: 60px 40px;
+        }
+
+        .contact-page h2 {
+            margin-bottom: 30px;
+            font-size: 32px;
+            color: white;
+        }
+
+        .contact-page p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .contact-page a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .contact-page a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .number-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 5px;
+            }
+
+            .number-box {
+                font-size: 13px;
+            }
+
+            header h1 {
+                font-size: 20px;
+            }
+
+            .container {
+                padding: 15px;
+                max-width: 95%;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Euro - Jackpot: Mathe Lotto</h1>
+    </header>
+
+    <main id="content">
+        <!-- Home Page -->
+        <div class="container" id="home-page">
+            <div class="number-grid" id="numberGrid"></div>
+            <button class="reset-btn" onclick="resetSelection()">Auswahl zurücksetzen</button>
+        </div>
+
+        <!-- Contact Page -->
+        <div class="container contact-page" id="contact-page" style="display: none;">
+            <h2>Contact:</h2>
+            <p>Discord: @randomauto</p>
+            <p>Mail: <a href="mailto:web.andbothosting@gmail.com">web.andbothosting@gmail.com</a></p>
+            <br>
+            <p style="margin-top: 40px;">All rights reserved</p>
+        </div>
+    </main>
+
+    <footer>
+        <div>© Web- und Bothosting 2020 - 2026</div>
+        <div>
+            <a href="#" onclick="showPage('home'); return false;" id="homeLink">Home</a>
+            <span style="margin: 0 10px;">|</span>
+            <a href="#" onclick="showPage('contact'); return false;" id="contactLink">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        // Erstelle die Zahlen 1-50
+        const numberGrid = document.getElementById('numberGrid');
+        const selectedNumbers = new Set();
+
+        for (let i = 1; i <= 50; i++) {
+            const box = document.createElement('div');
+            box.className = 'number-box';
+            box.textContent = i;
+            box.onclick = function() {
+                toggleNumber(i, box);
+            };
+            numberGrid.appendChild(box);
+        }
+
+        function toggleNumber(num, element) {
+            if (selectedNumbers.has(num)) {
+                selectedNumbers.delete(num);
+                element.classList.remove('selected');
+            } else {
+                selectedNumbers.add(num);
+                element.classList.add('selected');
+            }
+        }
+
+        function resetSelection() {
+            selectedNumbers.clear();
+            document.querySelectorAll('.number-box').forEach(box => {
+                box.classList.remove('selected');
+            });
+        }
+
+        function showPage(page) {
+            const homePage = document.getElementById('home-page');
+            const contactPage = document.getElementById('contact-page');
+            const homeLink = document.getElementById('homeLink');
+            const contactLink = document.getElementById('contactLink');
+
+            if (page === 'home') {
+                homePage.style.display = 'block';
+                contactPage.style.display = 'none';
+                homeLink.style.color = '#5a52a5';
+                contactLink.style.color = '#5a52a5';
+            } else if (page === 'contact') {
+                homePage.style.display = 'none';
+                contactPage.style.display = 'block';
+                homeLink.style.color = '#5a52a5';
+                contactLink.style.color = '#5a52a5';
+            }
+        }
+
+        // Start auf der Home-Seite
+        showPage('home');
+    </script>
+</body>
+</html>
