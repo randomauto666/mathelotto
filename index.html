@@ -302,61 +302,6 @@
         .color-green { background: #44FF44; }
         .color-blue { background: #4444FF; }
         .color-purple { background: #BB44FF; }
-
-        /* Dark Mode Fix */
-        .darkmode-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #000;
-        }
-
-        /* Farbauswahl Button */
-        .color-btn {
-            padding: 8px 20px;
-            background: linear-gradient(90deg, #3b3588 0%, #5a52a5 100%);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .color-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 53, 136, 0.4);
-        }
-
-        /* Modal */
-        .color-modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.6);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-        }
-
-        .color-modal-content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 300px;
-            text-align: center;
-        }
-
-        .color-modal-content h3 {
-            margin-bottom: 15px;
-        }
-
-        .modal-colors {
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
     </style>
 </head>
 <body>
@@ -365,33 +310,21 @@
     </header>
 
     <main id="content">
-
-        <div class="color-modal" id="colorModal">
-            <div class="color-modal-content">
-                <h3>Farbauswahl</h3>
-
-                <div class="color-selector modal-colors">
-                    <div class="color-option color-gold active" onclick="changeColor('#FFD700', '#FFC700', this)"></div>
-                    <div class="color-option color-red" onclick="changeColor('#FF4444', '#FF2222', this)"></div>
-                    <div class="color-option color-green" onclick="changeColor('#44FF44', '#22FF22', this)"></div>
-                    <div class="color-option color-blue" onclick="changeColor('#4444FF', '#2222FF', this)"></div>
-                    <div class="color-option color-purple" onclick="changeColor('#BB44FF', '#9922FF', this)"></div>
-                </div>
-
-                <button class="reset-btn" onclick="closeColorModal()">Schließen</button>
-            </div>
-        </div>
-
         <!-- Home Page -->
         <div class="container" id="home-page">
             <div class="settings-bar">
-                <div class="darkmode-wrapper">
-                    <span>🌙 Dark Mode</span>
+                <label>
+                    🌙 Dark Mode
                     <div class="toggle-switch" id="darkModeToggle" onclick="toggleDarkMode()"></div>
-                </div>
-
-                <button class="color-btn" onclick="openColorModal()">Farbauswahl</button>
-            </div>
+                </label>
+                    <div class="color-selector">
+                        <div class="color-option color-gold active" onclick="changeColor('#FFD700', '#FFC700', this)"></div>
+                        <div class="color-option color-red" onclick="changeColor('#FF4444', '#FF2222', this)"></div>
+                        <div class="color-option color-green" onclick="changeColor('#44FF44', '#22FF22', this)"></div>
+                        <div class="color-option color-blue" onclick="changeColor('#4444FF', '#2222FF', this)"></div>
+                        <div class="color-option color-purple" onclick="changeColor('#BB44FF', '#9922FF', this)"></div>
+                    </div>
+                </label>
             </div>
             <div class="number-grid" id="numberGrid"></div>
             <button class="reset-btn" onclick="resetSelection()">Auswahl zurücksetzen</button>
@@ -516,15 +449,6 @@
                 });
             }
         }
-
-        function openColorModal() {
-            document.getElementById('colorModal').style.display = 'flex';
-        }
-
-        function closeColorModal() {
-            document.getElementById('colorModal').style.display = 'none';
-        }
-
 
         // Start auf der Home-Seite
         showPage('home');
