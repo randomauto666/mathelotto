@@ -44,33 +44,7 @@
             color: #ccc;
         }
 
-        body.dark-mode .formel-card {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%);
-            border-left-color: #7a72c5;
-        }
 
-        body.dark-mode .formel-card h3 {
-            background: linear-gradient(90deg, #9b93d8 0%, #b5aee5 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        body.dark-mode .formel-text {
-            background: linear-gradient(135deg, #3a3a3a 0%, #2e2e2e 100%);
-            color: #e0e0e0;
-            border-color: #555;
-        }
-
-        body.dark-mode .beispiel-text {
-            background: rgba(122, 114, 197, 0.1);
-            color: #ccc;
-            border-left-color: #FFD700;
-        }
-
-        body.dark-mode .beispiel-text strong {
-            color: #9b93d8;
-        }
 
         header {
             background: linear-gradient(90deg, #1a1545 0%, #3b3588 100%);
@@ -407,6 +381,13 @@
         <!-- Formeln Page -->
         <div class="formeln-container" id="formeln-page" style="display: none;">
             <h2 style="text-align: center; margin-bottom: 25px; color: white; font-size: 28px; font-weight: 700;">📐 Mathe - Formeln</h2>
+            
+            <div class="formeln-tools">
+                <input type="text" class="search-box" id="searchBox" placeholder="🔍 Formel suchen..." oninput="sucheFormeln()">
+            </div>
+            
+            <button class="print-btn" onclick="window.print()">🖨️ Als PDF drucken</button>
+            
             <div class="formeln-grid" id="formelnGrid"></div>
         </div>
 
@@ -432,7 +413,6 @@
     </footer>
 
     <script>
-        // Formeln Daten - HIER kannst du neue Formeln hinzufügen!
         const formelnDaten = [
             {
                 thema: "Zinsrechnung (einfach)",
@@ -491,17 +471,57 @@
             const grid = document.getElementById('formelnGrid');
             grid.innerHTML = '';
             
-            formelnDaten.forEach(formel => {
+            formelnDaten.forEach((formel, index) => {
                 const card = document.createElement('div');
                 card.className = 'formel-card';
+                card.id = `formel-${index}`;
+                card.setAttribute('data-formel', formel.thema.toLowerCase() + ' ' + formel.formel.toLowerCase());
                 card.innerHTML = `
-                    <h3>${formel.thema}</h3>
-                    <div class="formel-text">${formel.formel}</div>
-                    <div class="beispiel-text"><strong>Beispiel:</strong><br>${formel.beispiel}</div>
+                    <div class="formel-header" onclick="toggleFormel(${index})">
+                        <h3>${formel.thema}</h3>
+                        <span class="formel-arrow">▼</span>
+                    </div>
+                    <div class="formel-content" id="content-${index}">
+                        <div class="formel-inner">
+                            <div class="formel-label">Formel:</div>
+                            <div class="formel-text">${formel.formel}</div>
+                            <div class="formel-label">Beispiel:</div>
+                            <div class="beispiel-text">${formel.beispiel}</div>
+                        </div>
+                    </div>
                 `;
                 grid.appendChild(card);
             });
         }
+
+        // Formel aufklappen/zuklappen
+        function toggleFormel(index) {
+            const card = document.getElementById(`formel-${index}`);
+            if (card) {
+                card.classList.toggle('open');
+            }
+        }
+
+        // Suchfunktion
+        function sucheFormeln() {
+            const searchBox = document.getElementById('searchBox');
+            const searchTerm = searchBox.value.toLowerCase();
+            const cards = document.querySelectorAll('.formel-card');
+            
+            cards.forEach(card => {
+                const formelData = card.getAttribute('data-formel');
+                if (formelData.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Event Listener entfernen da wir jetzt oninput verwenden
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialisierung falls nötig
+        });
 
         // Erstelle die Zahlen 1-50
         const numberGrid = document.getElementById('numberGrid');
