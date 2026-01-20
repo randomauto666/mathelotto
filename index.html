@@ -44,6 +44,34 @@
             color: #ccc;
         }
 
+        body.dark-mode .formel-card {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%);
+            border-left-color: #7a72c5;
+        }
+
+        body.dark-mode .formel-card h3 {
+            background: linear-gradient(90deg, #9b93d8 0%, #b5aee5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.dark-mode .formel-text {
+            background: linear-gradient(135deg, #3a3a3a 0%, #2e2e2e 100%);
+            color: #e0e0e0;
+            border-color: #555;
+        }
+
+        body.dark-mode .beispiel-text {
+            background: rgba(122, 114, 197, 0.1);
+            color: #ccc;
+            border-left-color: #FFD700;
+        }
+
+        body.dark-mode .beispiel-text strong {
+            color: #9b93d8;
+        }
+
         header {
             background: linear-gradient(90deg, #1a1545 0%, #3b3588 100%);
             padding: 15px;
@@ -72,6 +100,17 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             max-width: 350px;
             width: 100%;
+        }
+
+        .container.wide {
+            max-width: 800px;
+        }
+
+        /* Formeln Container */
+        .formeln-container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
         }
 
         .number-grid {
@@ -193,6 +232,70 @@
             text-decoration: underline;
         }
 
+        /* Formeln Seite */
+        .formeln-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .formel-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: none;
+            border-left: 5px solid #3b3588;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .formel-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(59, 53, 136, 0.3);
+            border-left-width: 8px;
+        }
+
+        .formel-card h3 {
+            background: linear-gradient(90deg, #3b3588 0%, #5a52a5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .formel-text {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #e8e5f5 0%, #f0eef8 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-size: 15px;
+            color: #1a1545;
+            font-weight: 600;
+            border: 2px solid #d0c9e8;
+            text-align: center;
+        }
+
+        .beispiel-text {
+            background: rgba(59, 53, 136, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+            color: #444;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-top: 10px;
+            border-left: 3px solid #FFD700;
+        }
+
+        .beispiel-text strong {
+            color: #3b3588;
+            display: block;
+            margin-bottom: 5px;
+        }
+
         @media (max-width: 600px) {
             .number-grid {
                 grid-template-columns: repeat(5, 1fr);
@@ -221,6 +324,10 @@
             .settings-bar {
                 flex-direction: column;
                 gap: 10px;
+            }
+
+            .formeln-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -297,6 +404,12 @@
             <button class="reset-btn" onclick="resetSelection()">Auswahl zurücksetzen</button>
         </div>
 
+        <!-- Formeln Page -->
+        <div class="formeln-container" id="formeln-page" style="display: none;">
+            <h2 style="text-align: center; margin-bottom: 25px; color: white; font-size: 28px; font-weight: 700;">📐 Mathe - Formeln</h2>
+            <div class="formeln-grid" id="formelnGrid"></div>
+        </div>
+
         <!-- Contact Page -->
         <div class="container contact-page" id="contact-page" style="display: none;">
             <h2>Contact:</h2>
@@ -312,11 +425,84 @@
         <div>
             <a href="#" onclick="showPage('home'); return false;" id="homeLink">Home</a>
             <span style="margin: 0 10px;">|</span>
+            <a href="#" onclick="showPage('formeln'); return false;" id="formelnLink">Formulas</a>
+            <span style="margin: 0 10px;">|</span>
             <a href="#" onclick="showPage('contact'); return false;" id="contactLink">Contact</a>
         </div>
     </footer>
 
     <script>
+        // Formeln Daten - HIER kannst du neue Formeln hinzufügen!
+        const formelnDaten = [
+            {
+                thema: "Zinsrechnung (einfach)",
+                formel: "Z = (K × p × t) / 100",
+                beispiel: "Kapital K = 1000€, Zinssatz p = 3%, Zeit t = 2 Jahre<br>Z = (1000 × 3 × 2) / 100 = 60€"
+            },
+            {
+                thema: "Zinseszins",
+                formel: "K_neu = K × (1 + p/100)^t",
+                beispiel: "Anfangskapital K = 1000€, Zinssatz p = 5%, Zeit t = 3 Jahre<br>K_neu = 1000 × (1 + 0,05)³ = 1157,63€"
+            },
+            {
+                thema: "Satz des Pythagoras",
+                formel: "a² + b² = c²",
+                beispiel: "Katheten: a = 3cm, b = 4cm<br>c² = 9 + 16 = 25<br>c = 5cm"
+            },
+            {
+                thema: "Flächeninhalt Rechteck",
+                formel: "A = a × b",
+                beispiel: "Länge a = 5cm, Breite b = 3cm<br>A = 5 × 3 = 15cm²"
+            },
+            {
+                thema: "Flächeninhalt Dreieck",
+                formel: "A = (g × h) / 2",
+                beispiel: "Grundseite g = 6cm, Höhe h = 4cm<br>A = (6 × 4) / 2 = 12cm²"
+            },
+            {
+                thema: "Umfang Rechteck",
+                formel: "U = 2a + 2b",
+                beispiel: "Länge a = 5cm, Breite b = 3cm<br>U = 2×5 + 2×3 = 16cm"
+            },
+            {
+                thema: "Kreisumfang",
+                formel: "U = 2πr  oder  U = πd",
+                beispiel: "Radius r = 3cm<br>U = 2 × π × 3 ≈ 18,85cm"
+            },
+            {
+                thema: "Kreisfläche",
+                formel: "A = πr²",
+                beispiel: "Radius r = 4cm<br>A = π × 4² ≈ 50,27cm²"
+            },
+            {
+                thema: "Lineare Gleichung lösen",
+                formel: "ax + b = c  →  x = (c - b) / a",
+                beispiel: "3x + 5 = 20<br>3x = 15<br>x = 5"
+            },
+            {
+                thema: "Prozentrechnung (Prozentwert)",
+                formel: "W = (G × p) / 100",
+                beispiel: "Grundwert G = 200€, Prozentsatz p = 15%<br>W = (200 × 15) / 100 = 30€"
+            }
+        ];
+
+        // Formeln anzeigen
+        function ladeFormeln() {
+            const grid = document.getElementById('formelnGrid');
+            grid.innerHTML = '';
+            
+            formelnDaten.forEach(formel => {
+                const card = document.createElement('div');
+                card.className = 'formel-card';
+                card.innerHTML = `
+                    <h3>${formel.thema}</h3>
+                    <div class="formel-text">${formel.formel}</div>
+                    <div class="beispiel-text"><strong>Beispiel:</strong><br>${formel.beispiel}</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
         // Erstelle die Zahlen 1-50
         const numberGrid = document.getElementById('numberGrid');
         const selectedNumbers = new Set();
@@ -350,37 +536,21 @@
 
         function showPage(page) {
             const homePage = document.getElementById('home-page');
+            const formelnPage = document.getElementById('formeln-page');
             const contactPage = document.getElementById('contact-page');
-            const homeLink = document.getElementById('homeLink');
-            const contactLink = document.getElementById('contactLink');
+
+            homePage.style.display = 'none';
+            formelnPage.style.display = 'none';
+            contactPage.style.display = 'none';
 
             if (page === 'home') {
                 homePage.style.display = 'block';
-                contactPage.style.display = 'none';
-                homeLink.style.color = '#5a52a5';
-                contactLink.style.color = '#5a52a5';
+            } else if (page === 'formeln') {
+                formelnPage.style.display = 'block';
+                ladeFormeln();
             } else if (page === 'contact') {
-                homePage.style.display = 'none';
                 contactPage.style.display = 'block';
-                homeLink.style.color = '#5a52a5';
-                contactLink.style.color = '#5a52a5';
             }
-        }
-
-        // Dark Mode Toggle
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            document.getElementById('darkModeToggle').classList.toggle('active');
-            
-            // Speichere Einstellung
-            const isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDark);
-        }
-
-        // Lade Dark Mode Einstellung
-        if (localStorage.getItem('darkMode') === 'true') {
-            document.body.classList.add('dark-mode');
-            document.getElementById('darkModeToggle').classList.add('active');
         }
 
         // Farbschema ändern
@@ -388,11 +558,9 @@
             document.documentElement.style.setProperty('--selection-color', bgColor);
             document.documentElement.style.setProperty('--selection-border', borderColor);
             
-            // Aktive Markierung
             document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('active'));
             element.classList.add('active');
             
-            // Speichere Farbwahl
             localStorage.setItem('selectionColor', bgColor);
             localStorage.setItem('selectionBorder', borderColor);
             localStorage.setItem('activeColorClass', element.className);
