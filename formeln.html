@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formeln - Mathe Hub</title>
+    <link rel="icon" type="image/png" href="bild.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1a1545 0%, #3b3588 100%);
+            padding: 15px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 22px;
+            font-weight: 400;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px;
+        }
+
+        .formeln-container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .formeln-tools {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 17px;
+            background: white;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .search-box:focus {
+            outline: none;
+            box-shadow: 0 6px 30px rgba(59, 53, 136, 0.5);
+            transform: scale(1.02);
+        }
+
+        .search-box::placeholder {
+            color: #999;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 15px 30px;
+            background: white;
+            color: #3b3588;
+            border: none;
+            border-radius: 50px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(90deg, #FFD700 0%, #FFC700 100%);
+            color: #1a1545;
+        }
+
+        .formeln-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 10px 0;
+        }
+
+        .formel-card {
+            background: linear-gradient(135deg, #1a1545 0%, #3b3588 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+        }
+
+        .formel-card.open {
+            box-shadow: 0 8px 25px rgba(59, 53, 136, 0.4);
+        }
+
+        .formel-header {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            user-select: none;
+            transition: background 0.3s ease;
+        }
+
+        .formel-header:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .formel-header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .formel-arrow {
+            font-size: 22px;
+            transition: transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        .formel-card.open .formel-arrow {
+            transform: rotate(180deg);
+        }
+
+        .formel-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            background: linear-gradient(135deg, #1a1545 0%, #3b3588 100%);
+        }
+
+        .formel-card.open .formel-content {
+            max-height: 800px;
+        }
+
+        .formel-inner {
+            padding: 0 25px 25px 25px;
+        }
+
+        .formel-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .formel-text {
+            font-family: 'Courier New', monospace;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .beispiel-text {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            line-height: 1.7;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        footer {
+            background: #0a0a1a;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        footer a {
+            color: #5a52a5;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #7a72c5;
+        }
+
+        @media print {
+            body {
+                background: white !important;
+            }
+            
+            header, footer, .formeln-tools, .print-btn {
+                display: none !important;
+            }
+            
+            .formeln-container {
+                max-width: 100% !important;
+                padding: 20px !important;
+            }
+            
+            .formel-card {
+                page-break-inside: avoid;
+                box-shadow: none !important;
+                border: 2px solid #3b3588 !important;
+                margin-bottom: 20px;
+                background: white !important;
+                border-radius: 8px !important;
+            }
+            
+            .formel-content {
+                max-height: none !important;
+                display: block !important;
+                background: white !important;
+            }
+            
+            .formel-arrow {
+                display: none !important;
+            }
+            
+            .formel-header {
+                background: #f0f0f0 !important;
+                border-bottom: 2px solid #3b3588 !important;
+            }
+            
+            .formel-header h3 {
+                color: #3b3588 !important;
+            }
+            
+            .formel-label {
+                color: #3b3588 !important;
+                font-weight: 700 !important;
+            }
+            
+            .formel-text {
+                background: #f5f5f5 !important;
+                color: #000 !important;
+                border: 1px solid #ccc !important;
+            }
+            
+            .beispiel-text {
+                background: #f9f9f9 !important;
+                color: #333 !important;
+                border: 1px solid #ddd !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .formeln-container {
+                padding: 15px;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📐 Mathe - Formeln</h1>
+    </header>
+
+    <main>
+        <div class="formeln-container">
+            <h2 style="text-align: center; margin-bottom: 25px; color: white; font-size: 28px; font-weight: 700;">Formelsammlung</h2>
+            
+            <div class="formeln-tools">
+                <input type="text" class="search-box" id="searchBox" placeholder="🔍 Formel suchen..." oninput="sucheFormeln()">
+            </div>
+            
+            <button class="print-btn" onclick="window.print()">🖨️ Als PDF drucken</button>
+            
+            <div class="formeln-grid" id="formelnGrid"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div>© Web- and Bothosting 2020 - 2026</div>
+        <div>
+            <a href="index.html">Home</a>
+            <span style="margin: 0 10px;">|</span>
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        // Formeln aus JSON laden
+        async function ladeFormeln() {
+            try {
+                const response = await fetch('formeln.json');
+                const formelnDaten = await response.json();
+                
+                const grid = document.getElementById('formelnGrid');
+                grid.innerHTML = '';
+                
+                formelnDaten.forEach((formel, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'formel-card';
+                    card.id = `formel-${index}`;
+                    card.setAttribute('data-formel', formel.thema.toLowerCase() + ' ' + formel.formel.toLowerCase());
+                    card.innerHTML = `
+                        <div class="formel-header" onclick="toggleFormel(${index})">
+                            <h3>${formel.thema}</h3>
+                            <span class="formel-arrow">▼</span>
+                        </div>
+                        <div class="formel-content" id="content-${index}">
+                            <div class="formel-inner">
+                                <div class="formel-label">Formel:</div>
+                                <div class="formel-text">${formel.formel}</div>
+                                <div class="formel-label">Beispiel:</div>
+                                <div class="beispiel-text">${formel.beispiel}</div>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Fehler beim Laden der Formeln:', error);
+                document.getElementById('formelnGrid').innerHTML = '<p style="color: white; text-align: center;">Fehler beim Laden der Formeln. Bitte formeln.json Datei überprüfen.</p>';
+            }
+        }
+
+        // Formel aufklappen/zuklappen
+        function toggleFormel(index) {
+            const card = document.getElementById(`formel-${index}`);
+            if (card) {
+                card.classList.toggle('open');
+            }
+        }
+
+        // Suchfunktion
+        function sucheFormeln() {
+            const searchBox = document.getElementById('searchBox');
+            const searchTerm = searchBox.value.toLowerCase();
+            const cards = document.querySelectorAll('.formel-card');
+            
+            cards.forEach(card => {
+                const formelData = card.getAttribute('data-formel');
+                if (formelData.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Formeln beim Laden der Seite laden
+        ladeFormeln();
+    </script>
+</body>
+</html>
