@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Euro - Jackpot: Mathe Lotto</title>
+    <title>Mathe Hub - Startseite</title>
     <link rel="icon" type="image/png" href="bild.png">
     <style>
         * {
@@ -18,33 +18,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            transition: background 0.3s ease;
         }
-
-        body.dark-mode {
-            background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #16213e 100%);
-        }
-
-        body.dark-mode .container {
-            background: #1e1e1e;
-            color: #fff;
-        }
-
-        body.dark-mode .number-box {
-            background: #2a2a2a;
-            border-color: #444;
-            color: #fff;
-        }
-
-        body.dark-mode .number-box:hover {
-            border-color: #7a72c5;
-        }
-
-        body.dark-mode .info-text {
-            color: #ccc;
-        }
-
-
 
         header {
             background: linear-gradient(90deg, #1a1545 0%, #3b3588 100%);
@@ -64,95 +38,111 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px 10px;
+            padding: 40px 20px;
         }
 
-        .container {
-            background: white;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            max-width: 350px;
+        /* Startseite */
+        .hero-container {
+            text-align: center;
+            max-width: 900px;
             width: 100%;
         }
 
-        .container.wide {
-            max-width: 800px;
-        }
-
-        /* Formeln Container */
-        .formeln-container {
-            max-width: 1000px;
-            width: 100%;
-            padding: 20px;
-        }
-
-        .number-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 4px;
-            margin-bottom: 10px;
-        }
-
-        .number-box {
-            aspect-ratio: 1;
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFD700, #FFC700);
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f0f0f0;
-            border: 2px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: 600;
-            color: #333;
-            transition: all 0.2s ease;
-            user-select: none;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+            animation: pulse 3s ease-in-out infinite;
         }
 
-        .number-box:hover {
-            transform: scale(1.05);
-            border-color: #3b3588;
+        .hero-image img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
         }
 
-        .number-box.selected {
-            background: var(--selection-color, #FFD700);
-            border-color: var(--selection-border, #FFC700);
-            color: #000;
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(255, 215, 0, 0.9);
+                transform: scale(1.05);
+            }
         }
 
-        body.dark-mode .number-box.selected {
-            color: #000;
+        .hero-title {
+            font-size: 48px;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            font-weight: 700;
         }
 
-        .info-text {
-            text-align: center;
-            color: #333;
-            margin-top: 10px;
-            line-height: 1.3;
-            font-size: 12px;
+        .hero-text {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 50px;
+            line-height: 1.6;
         }
 
-        .info-text p {
-            margin: 3px 0;
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .reset-btn {
-            display: block;
-            margin: 10px auto 0;
-            padding: 8px 20px;
-            background: linear-gradient(90deg, #3b3588 0%, #5a52a5 100%);
+        .hero-button {
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #1a1545 0%, #3b3588 100%);
             color: white;
             border: none;
-            border-radius: 6px;
-            font-size: 13px;
+            border-radius: 20px;
+            font-size: 24px;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
         }
 
-        .reset-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 53, 136, 0.4);
+        .hero-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .hero-button:hover::before {
+            left: 100%;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, #FFD700 0%, #FFC700 100%);
+            color: #1a1545;
+        }
+
+        .button-icon {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 15px;
         }
 
         footer {
@@ -177,436 +167,76 @@
             color: #7a72c5;
         }
 
-        .contact-page {
-            background: linear-gradient(135deg, rgba(26, 21, 69, 0.95) 0%, rgba(59, 53, 136, 0.95) 100%);
-            text-align: center;
-            color: white;
-            line-height: 2;
-            padding: 60px 40px;
-        }
-
-        .contact-page h2 {
-            margin-bottom: 30px;
-            font-size: 32px;
-            color: white;
-        }
-
-        .contact-page p {
-            font-size: 18px;
-            margin: 10px 0;
-            color: white;
-        }
-
-        .contact-page a {
-            color: #FFD700;
-            text-decoration: none;
-        }
-
-        .contact-page a:hover {
-            text-decoration: underline;
-        }
-
-        /* Formeln Seite */
-        .formeln-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
-            padding: 10px 0;
-        }
-
-        .formel-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            border: none;
-            border-left: 5px solid #3b3588;
-            border-radius: 12px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .formel-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 30px rgba(59, 53, 136, 0.3);
-            border-left-width: 8px;
-        }
-
-        .formel-card h3 {
-            background: linear-gradient(90deg, #3b3588 0%, #5a52a5 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 15px;
-            font-size: 19px;
-            font-weight: 700;
-        }
-
-        .formel-text {
-            font-family: 'Courier New', monospace;
-            background: linear-gradient(135deg, #e8e5f5 0%, #f0eef8 100%);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 12px 0;
-            font-size: 15px;
-            color: #1a1545;
-            font-weight: 600;
-            border: 2px solid #d0c9e8;
-            text-align: center;
-        }
-
-        .beispiel-text {
-            background: rgba(59, 53, 136, 0.05);
-            padding: 12px;
-            border-radius: 8px;
-            color: #444;
-            font-size: 13px;
-            line-height: 1.7;
-            margin-top: 10px;
-            border-left: 3px solid #FFD700;
-        }
-
-        .beispiel-text strong {
-            color: #3b3588;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        @media (max-width: 600px) {
-            .number-grid {
-                grid-template-columns: repeat(5, 1fr);
-                gap: 5px;
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
             }
 
-            .number-box {
-                font-size: 13px;
+            .hero-text {
+                font-size: 16px;
             }
 
-            header h1 {
+            .button-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .hero-button {
+                padding: 30px 20px;
                 font-size: 20px;
-            }
-
-            .container {
-                padding: 15px;
-                max-width: 95%;
             }
 
             footer {
                 flex-direction: column;
-                gap: 10px;
                 text-align: center;
             }
-
-            .settings-bar {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .formeln-grid {
-                grid-template-columns: 1fr;
-            }
         }
-
-        /* Settings Bar */
-        .settings-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-
-        .settings-bar label {
-            color: #000;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .color-selector {
-            display: flex;
-            gap: 8px;
-        }
-
-        .color-option {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 3px solid transparent;
-            transition: all 0.2s;
-        }
-
-        .color-option:hover {
-            transform: scale(1.1);
-        }
-
-        .color-option.active {
-            border-color: #fff;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        .color-gold { background: #FFD700; }
-        .color-red { background: #FF4444; }
-        .color-green { background: #44FF44; }
-        .color-blue { background: #4444FF; }
-        .color-purple { background: #BB44FF; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Euro - Jackpot: Mathe Lotto</h1>
+        <h1>🎓 Mathe Hub - Dein Lernportal</h1>
     </header>
 
-    <main id="content">
-        <!-- Home Page -->
-        <div class="container" id="home-page">
-            <div class="settings-bar">
-                <label>
-                    <div class="color-selector">
-                        <div class="color-option color-gold active" onclick="changeColor('#FFD700', '#FFC700', this)"></div>
-                        <div class="color-option color-red" onclick="changeColor('#FF4444', '#FF2222', this)"></div>
-                        <div class="color-option color-green" onclick="changeColor('#44FF44', '#22FF22', this)"></div>
-                        <div class="color-option color-blue" onclick="changeColor('#4444FF', '#2222FF', this)"></div>
-                        <div class="color-option color-purple" onclick="changeColor('#BB44FF', '#9922FF', this)"></div>
-                    </div>
-                </label>
-            </div>
-            <div class="number-grid" id="numberGrid"></div>
-            <button class="reset-btn" onclick="resetSelection()">Auswahl zurücksetzen</button>
-        </div>
-
-        <!-- Formeln Page -->
-        <div class="formeln-container" id="formeln-page" style="display: none;">
-            <h2 style="text-align: center; margin-bottom: 25px; color: white; font-size: 28px; font-weight: 700;">📐 Mathe - Formeln</h2>
-            
-            <div class="formeln-tools">
-                <input type="text" class="search-box" id="searchBox" placeholder="🔍 Formel suchen..." oninput="sucheFormeln()">
+    <main>
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="bild.png" alt="Mathe Hub Logo" onerror="this.style.display='none'">
             </div>
             
-            <button class="print-btn" onclick="window.print()">🖨️ Als PDF drucken</button>
+            <h1 class="hero-title">Willkommen im Mathe Hub!</h1>
             
-            <div class="formeln-grid" id="formelnGrid"></div>
-        </div>
+            <p class="hero-text">
+                Deine zentrale Anlaufstelle für Mathematik. Ob Formeln nachschlagen, 
+                mit dem Mathelotto üben oder einfach nur stöbern - hier findest du alles!
+            </p>
 
-        <!-- Contact Page -->
-        <div class="container contact-page" id="contact-page" style="display: none;">
-            <h2>Contact:</h2>
-            <p>Discord: @randomauto</p>
-            <p>Mail: <a href="mailto:web.andbothosting@gmail.com">web.andbothosting@gmail.com</a></p>
-            <br>
-            <p style="margin-top: 40px;">All rights reserved</p>
+            <div class="button-grid">
+                <button class="hero-button" onclick="window.location.href='mathelotto.html'">
+                    <span class="button-icon">🎲</span>
+                    Mathelotto
+                </button>
+                
+                <button class="hero-button" onclick="window.location.href='formeln.html'">
+                    <span class="button-icon">📐</span>
+                    Formeln
+                </button>
+                
+                <button class="hero-button" onclick="window.location.href='contact.html'">
+                    <span class="button-icon">📧</span>
+                    Contact
+                </button>
+            </div>
         </div>
     </main>
 
     <footer>
         <div>© Web- and Bothosting 2020 - 2026</div>
         <div>
-            <a href="#" onclick="showPage('home'); return false;" id="homeLink">Home</a>
+            <a href="index.html">Home</a>
             <span style="margin: 0 10px;">|</span>
-            <a href="#" onclick="showPage('formeln'); return false;" id="formelnLink">Formulas</a>
-            <span style="margin: 0 10px;">|</span>
-            <a href="#" onclick="showPage('contact'); return false;" id="contactLink">Contact</a>
+            <a href="contact.html">Contact</a>
         </div>
     </footer>
-
-    <script>
-        const formelnDaten = [
-            {
-                thema: "Zinsrechnung (einfach)",
-                formel: "Z = (K × p × t) / 100",
-                beispiel: "Kapital K = 1000€, Zinssatz p = 3%, Zeit t = 2 Jahre<br>Z = (1000 × 3 × 2) / 100 = 60€"
-            },
-            {
-                thema: "Zinseszins",
-                formel: "K_neu = K × (1 + p/100)^t",
-                beispiel: "Anfangskapital K = 1000€, Zinssatz p = 5%, Zeit t = 3 Jahre<br>K_neu = 1000 × (1 + 0,05)³ = 1157,63€"
-            },
-            {
-                thema: "Satz des Pythagoras",
-                formel: "a² + b² = c²",
-                beispiel: "Katheten: a = 3cm, b = 4cm<br>c² = 9 + 16 = 25<br>c = 5cm"
-            },
-            {
-                thema: "Flächeninhalt Rechteck",
-                formel: "A = a × b",
-                beispiel: "Länge a = 5cm, Breite b = 3cm<br>A = 5 × 3 = 15cm²"
-            },
-            {
-                thema: "Flächeninhalt Dreieck",
-                formel: "A = (g × h) / 2",
-                beispiel: "Grundseite g = 6cm, Höhe h = 4cm<br>A = (6 × 4) / 2 = 12cm²"
-            },
-            {
-                thema: "Umfang Rechteck",
-                formel: "U = 2a + 2b",
-                beispiel: "Länge a = 5cm, Breite b = 3cm<br>U = 2×5 + 2×3 = 16cm"
-            },
-            {
-                thema: "Kreisumfang",
-                formel: "U = 2πr  oder  U = πd",
-                beispiel: "Radius r = 3cm<br>U = 2 × π × 3 ≈ 18,85cm"
-            },
-            {
-                thema: "Kreisfläche",
-                formel: "A = πr²",
-                beispiel: "Radius r = 4cm<br>A = π × 4² ≈ 50,27cm²"
-            },
-            {
-                thema: "Lineare Gleichung lösen",
-                formel: "ax + b = c  →  x = (c - b) / a",
-                beispiel: "3x + 5 = 20<br>3x = 15<br>x = 5"
-            },
-            {
-                thema: "Prozentrechnung (Prozentwert)",
-                formel: "W = (G × p) / 100",
-                beispiel: "Grundwert G = 200€, Prozentsatz p = 15%<br>W = (200 × 15) / 100 = 30€"
-            }
-        ];
-
-        // Formeln anzeigen
-        function ladeFormeln() {
-            const grid = document.getElementById('formelnGrid');
-            grid.innerHTML = '';
-            
-            formelnDaten.forEach((formel, index) => {
-                const card = document.createElement('div');
-                card.className = 'formel-card';
-                card.id = `formel-${index}`;
-                card.setAttribute('data-formel', formel.thema.toLowerCase() + ' ' + formel.formel.toLowerCase());
-                card.innerHTML = `
-                    <div class="formel-header" onclick="toggleFormel(${index})">
-                        <h3>${formel.thema}</h3>
-                        <span class="formel-arrow">▼</span>
-                    </div>
-                    <div class="formel-content" id="content-${index}">
-                        <div class="formel-inner">
-                            <div class="formel-label">Formel:</div>
-                            <div class="formel-text">${formel.formel}</div>
-                            <div class="formel-label">Beispiel:</div>
-                            <div class="beispiel-text">${formel.beispiel}</div>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        // Formel aufklappen/zuklappen
-        function toggleFormel(index) {
-            const card = document.getElementById(`formel-${index}`);
-            if (card) {
-                card.classList.toggle('open');
-            }
-        }
-
-        // Suchfunktion
-        function sucheFormeln() {
-            const searchBox = document.getElementById('searchBox');
-            const searchTerm = searchBox.value.toLowerCase();
-            const cards = document.querySelectorAll('.formel-card');
-            
-            cards.forEach(card => {
-                const formelData = card.getAttribute('data-formel');
-                if (formelData.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Event Listener entfernen da wir jetzt oninput verwenden
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialisierung falls nötig
-        });
-
-        // Erstelle die Zahlen 1-50
-        const numberGrid = document.getElementById('numberGrid');
-        const selectedNumbers = new Set();
-
-        for (let i = 1; i <= 50; i++) {
-            const box = document.createElement('div');
-            box.className = 'number-box';
-            box.textContent = i;
-            box.onclick = function() {
-                toggleNumber(i, box);
-            };
-            numberGrid.appendChild(box);
-        }
-
-        function toggleNumber(num, element) {
-            if (selectedNumbers.has(num)) {
-                selectedNumbers.delete(num);
-                element.classList.remove('selected');
-            } else {
-                selectedNumbers.add(num);
-                element.classList.add('selected');
-            }
-        }
-
-        function resetSelection() {
-            selectedNumbers.clear();
-            document.querySelectorAll('.number-box').forEach(box => {
-                box.classList.remove('selected');
-            });
-        }
-
-        function showPage(page) {
-            const homePage = document.getElementById('home-page');
-            const formelnPage = document.getElementById('formeln-page');
-            const contactPage = document.getElementById('contact-page');
-
-            homePage.style.display = 'none';
-            formelnPage.style.display = 'none';
-            contactPage.style.display = 'none';
-
-            if (page === 'home') {
-                homePage.style.display = 'block';
-            } else if (page === 'formeln') {
-                formelnPage.style.display = 'block';
-                ladeFormeln();
-            } else if (page === 'contact') {
-                contactPage.style.display = 'block';
-            }
-        }
-
-        // Farbschema ändern
-        function changeColor(bgColor, borderColor, element) {
-            document.documentElement.style.setProperty('--selection-color', bgColor);
-            document.documentElement.style.setProperty('--selection-border', borderColor);
-            
-            document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('active'));
-            element.classList.add('active');
-            
-            localStorage.setItem('selectionColor', bgColor);
-            localStorage.setItem('selectionBorder', borderColor);
-            localStorage.setItem('activeColorClass', element.className);
-        }
-
-        // Lade Farbeinstellung
-        const savedColor = localStorage.getItem('selectionColor');
-        const savedBorder = localStorage.getItem('selectionBorder');
-        const savedClass = localStorage.getItem('activeColorClass');
-        
-        if (savedColor && savedBorder) {
-            document.documentElement.style.setProperty('--selection-color', savedColor);
-            document.documentElement.style.setProperty('--selection-border', savedBorder);
-            
-            if (savedClass) {
-                document.querySelectorAll('.color-option').forEach(opt => {
-                    opt.classList.remove('active');
-                    if (opt.className === savedClass) {
-                        opt.classList.add('active');
-                    }
-                });
-            }
-        }
-
-        // Start auf der Home-Seite
-        showPage('home');
-    </script>
 </body>
 </html>
