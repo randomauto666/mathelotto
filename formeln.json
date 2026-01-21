@@ -1,0 +1,52 @@
+[
+    {
+        "thema": "Zinsrechnung (einfach)",
+        "formel": "Z = (K × p × t) / 100",
+        "beispiel": "Kapital K = 1000€, Zinssatz p = 3%, Zeit t = 2 Jahre<br>Z = (1000 × 3 × 2) / 100 = 60€"
+    },
+    {
+        "thema": "Zinseszins",
+        "formel": "K_neu = K × (1 + p/100)^t",
+        "beispiel": "Anfangskapital K = 1000€, Zinssatz p = 5%, Zeit t = 3 Jahre<br>K_neu = 1000 × (1 + 0,05)³ = 1157,63€"
+    },
+    {
+        "thema": "Satz des Pythagoras",
+        "formel": "a² + b² = c²",
+        "beispiel": "Katheten: a = 3cm, b = 4cm<br>c² = 9 + 16 = 25<br>c = 5cm"
+    },
+    {
+        "thema": "Flächeninhalt Rechteck",
+        "formel": "A = a × b",
+        "beispiel": "Länge a = 5cm, Breite b = 3cm<br>A = 5 × 3 = 15cm²"
+    },
+    {
+        "thema": "Flächeninhalt Dreieck",
+        "formel": "A = (g × h) / 2",
+        "beispiel": "Grundseite g = 6cm, Höhe h = 4cm<br>A = (6 × 4) / 2 = 12cm²"
+    },
+    {
+        "thema": "Umfang Rechteck",
+        "formel": "U = 2a + 2b",
+        "beispiel": "Länge a = 5cm, Breite b = 3cm<br>U = 2×5 + 2×3 = 16cm"
+    },
+    {
+        "thema": "Kreisumfang",
+        "formel": "U = 2πr  oder  U = πd",
+        "beispiel": "Radius r = 3cm<br>U = 2 × π × 3 ≈ 18,85cm"
+    },
+    {
+        "thema": "Kreisfläche",
+        "formel": "A = πr²",
+        "beispiel": "Radius r = 4cm<br>A = π × 4² ≈ 50,27cm²"
+    },
+    {
+        "thema": "Lineare Gleichung lösen",
+        "formel": "ax + b = c  →  x = (c - b) / a",
+        "beispiel": "3x + 5 = 20<br>3x = 15<br>x = 5"
+    },
+    {
+        "thema": "Prozentrechnung (Prozentwert)",
+        "formel": "W = (G × p) / 100",
+        "beispiel": "Grundwert G = 200€, Prozentsatz p = 15%<br>W = (200 × 15) / 100 = 30€"
+    }
+]
