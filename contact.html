@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mathe Hub</title>
+    <link rel="icon" type="image/png" href="bild.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1a1545 0%, #3b3588 100%);
+            padding: 15px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 22px;
+            font-weight: 400;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .contact-container {
+            background: linear-gradient(135deg, rgba(26, 21, 69, 0.95) 0%, rgba(59, 53, 136, 0.95) 100%);
+            text-align: center;
+            color: white;
+            line-height: 2;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .contact-container h2 {
+            margin-bottom: 30px;
+            font-size: 32px;
+            color: white;
+        }
+
+        .contact-container p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .contact-container a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-container a:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        .contact-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background: #0a0a1a;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        footer a {
+            color: #5a52a5;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #7a72c5;
+        }
+
+        @media (max-width: 600px) {
+            .contact-container {
+                padding: 40px 20px;
+            }
+
+            .contact-container h2 {
+                font-size: 24px;
+            }
+
+            .contact-container p {
+                font-size: 16px;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📧 Contact - Mathe Hub</h1>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <div class="contact-icon">💬</div>
+            <h2>Kontaktiere uns!</h2>
+            
+            <div class="contact-item">
+                <p><strong>Discord:</strong></p>
+                <p>@randomauto</p>
+            </div>
+            
+            <div class="contact-item">
+                <p><strong>E-Mail:</strong></p>
+                <p><a href="mailto:web.andbothosting@gmail.com">web.andbothosting@gmail.com</a></p>
+            </div>
+            
+            <p style="margin-top: 40px; font-size: 14px; opacity: 0.8;">All rights reserved</p>
+        </div>
+    </main>
+
+    <footer>
+        <div>© Web- and Bothosting 2020 - 2026</div>
+        <div>
+            <a href="index.html">Home</a>
+            <span style="margin: 0 10px;">|</span>
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>
