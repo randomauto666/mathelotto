@@ -22,15 +22,16 @@
 
         header {
             background: linear-gradient(90deg, #1a1545 0%, #3b3588 100%);
-            padding: 15px;
+            padding: 20px;
             text-align: center;
             color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         header h1 {
-            font-size: 22px;
-            font-weight: 400;
+            font-size: 28px;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
         }
 
         main {
@@ -42,56 +43,99 @@
         }
 
         .contact-container {
-            background: linear-gradient(135deg, rgba(26, 21, 69, 0.95) 0%, rgba(59, 53, 136, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.95));
             text-align: center;
-            color: white;
+            color: #333;
             line-height: 2;
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
+            padding: 60px 50px;
+            border-radius: 25px;
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.4);
+            max-width: 700px;
             width: 100%;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .contact-container h2 {
-            margin-bottom: 30px;
-            font-size: 32px;
-            color: white;
+            margin-bottom: 40px;
+            font-size: 38px;
+            background: linear-gradient(90deg, #3b3588 0%, #5a52a5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
         }
 
         .contact-container p {
             font-size: 18px;
             margin: 10px 0;
-            color: white;
+            color: #333;
         }
 
         .contact-container a {
             color: #FFD700;
             text-decoration: none;
             transition: all 0.3s ease;
+            font-weight: 700;
         }
 
         .contact-container a:hover {
-            text-decoration: underline;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            color: #FFA500;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
         }
 
         .contact-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 64px;
+            margin-bottom: 25px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
         }
 
         .contact-item {
-            margin: 25px 0;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            transition: all 0.3s ease;
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(59, 53, 136, 0.1), rgba(255, 215, 0, 0.1));
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            border: 2px solid rgba(59, 53, 136, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         .contact-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(59, 53, 136, 0.15), rgba(255, 215, 0, 0.15));
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
+            border-color: #FFD700;
+        }
+
+        .contact-item strong {
+            color: #3b3588;
+            font-size: 20px;
+        }
+
+        .rights-text {
+            margin-top: 50px;
+            font-size: 14px;
+            opacity: 0.7;
+            color: #666;
         }
 
         footer {
@@ -106,27 +150,36 @@
         }
 
         footer a {
-            color: #5a52a5;
+            color: #FFD700;
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         footer a:hover {
-            color: #7a72c5;
+            color: #FFC700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
         }
 
         @media (max-width: 600px) {
+            header h1 {
+                font-size: 22px;
+            }
+
             .contact-container {
-                padding: 40px 20px;
+                padding: 40px 25px;
             }
 
             .contact-container h2 {
-                font-size: 24px;
+                font-size: 28px;
             }
 
             .contact-container p {
                 font-size: 16px;
+            }
+
+            .contact-icon {
+                font-size: 48px;
             }
 
             footer {
@@ -156,7 +209,7 @@
                 <p><a href="mailto:web.andbothosting@gmail.com">web.andbothosting@gmail.com</a></p>
             </div>
             
-            <p style="margin-top: 40px; font-size: 14px; opacity: 0.8;">All rights reserved</p>
+            <p class="rights-text">All rights reserved</p>
         </div>
     </main>
 
