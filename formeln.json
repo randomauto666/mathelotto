@@ -1,52 +1,1256 @@
 [
     {
-        "thema": "Zinsrechnung (einfach)",
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Prozentrechnung - Prozentwert",
+        "formel": "W = (G × p) / 100",
+        "beispiel": "Grundwert G = 200€, Prozentsatz p = 15%<br>W = (200 × 15) / 100 = 30€"
+    },
+    {
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Prozentrechnung - Grundwert",
+        "formel": "G = (W × 100) / p",
+        "beispiel": "Prozentwert W = 30€, Prozentsatz p = 15%<br>G = (30 × 100) / 15 = 200€"
+    },
+    {
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Prozentrechnung - Prozentsatz",
+        "formel": "p = (W × 100) / G",
+        "beispiel": "Prozentwert W = 30€, Grundwert G = 200€<br>p = (30 × 100) / 200 = 15%"
+    },
+    {
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Prozentuale Veränderung",
+        "formel": "p = ((G_neu - G_alt) / G_alt) × 100",
+        "beispiel": "Alt: 80€, Neu: 100€<br>p = ((100 - 80) / 80) × 100 = 25%"
+    },
+    {
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Zinsrechnung (einfach) - Zinsen",
         "formel": "Z = (K × p × t) / 100",
         "beispiel": "Kapital K = 1000€, Zinssatz p = 3%, Zeit t = 2 Jahre<br>Z = (1000 × 3 × 2) / 100 = 60€"
     },
     {
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Zinsrechnung - Kapital",
+        "formel": "K = (Z × 100) / (p × t)",
+        "beispiel": "Zinsen Z = 60€, Zinssatz p = 3%, Zeit t = 2 Jahre<br>K = (60 × 100) / (3 × 2) = 1000€"
+    },
+    {
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Zinsrechnung - Zinssatz",
+        "formel": "p = (Z × 100) / (K × t)",
+        "beispiel": "Zinsen Z = 60€, Kapital K = 1000€, Zeit t = 2 Jahre<br>p = (60 × 100) / (1000 × 2) = 3%"
+    },
+    {
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Zinsrechnung - Zeit",
+        "formel": "t = (Z × 100) / (K × p)",
+        "beispiel": "Zinsen Z = 60€, Kapital K = 1000€, Zinssatz p = 3%<br>t = (60 × 100) / (1000 × 3) = 2 Jahre"
+    },
+    {
+        "kategorie": "MATHEMATIK - ARITHMETIK",
         "thema": "Zinseszins",
         "formel": "K_neu = K × (1 + p/100)^t",
-        "beispiel": "Anfangskapital K = 1000€, Zinssatz p = 5%, Zeit t = 3 Jahre<br>K_neu = 1000 × (1 + 0,05)³ = 1157,63€"
+        "beispiel": "Anfangskapital K = 1000€, Zinssatz p = 5%, Zeit t = 3 Jahre<br>K_neu = 1000 × (1,05)³ = 1157,63€"
     },
     {
-        "thema": "Satz des Pythagoras",
-        "formel": "a² + b² = c²",
-        "beispiel": "Katheten: a = 3cm, b = 4cm<br>c² = 9 + 16 = 25<br>c = 5cm"
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Zinseszins - Anfangskapital",
+        "formel": "K = K_neu / (1 + p/100)^t",
+        "beispiel": "Endkapital K_neu = 1157,63€, Zinssatz p = 5%, Zeit t = 3 Jahre<br>K = 1157,63 / (1,05)³ = 1000€"
     },
     {
-        "thema": "Flächeninhalt Rechteck",
-        "formel": "A = a × b",
-        "beispiel": "Länge a = 5cm, Breite b = 3cm<br>A = 5 × 3 = 15cm²"
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Dreisatz (direkt proportional)",
+        "formel": "x = (b × a₁) / a₂",
+        "beispiel": "3 kg kosten 12€, wie viel kosten 5 kg?<br>x = (5 × 12) / 3 = 20€"
     },
     {
-        "thema": "Flächeninhalt Dreieck",
-        "formel": "A = (g × h) / 2",
-        "beispiel": "Grundseite g = 6cm, Höhe h = 4cm<br>A = (6 × 4) / 2 = 12cm²"
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Dreisatz (indirekt proportional)",
+        "formel": "x = (a₁ × b₁) / a₂",
+        "beispiel": "4 Arbeiter brauchen 6 Tage, wie lange brauchen 3 Arbeiter?<br>x = (4 × 6) / 3 = 8 Tage"
     },
     {
-        "thema": "Umfang Rechteck",
-        "formel": "U = 2a + 2b",
-        "beispiel": "Länge a = 5cm, Breite b = 3cm<br>U = 2×5 + 2×3 = 16cm"
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Durchschnitt (Mittelwert)",
+        "formel": "x̄ = (x₁ + x₂ + ... + xₙ) / n",
+        "beispiel": "Werte: 2, 4, 6, 8<br>x̄ = (2 + 4 + 6 + 8) / 4 = 5"
     },
     {
-        "thema": "Kreisumfang",
-        "formel": "U = 2πr  oder  U = πd",
-        "beispiel": "Radius r = 3cm<br>U = 2 × π × 3 ≈ 18,85cm"
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Teilbarkeitsregeln - durch 2",
+        "formel": "Endziffer ist 0, 2, 4, 6 oder 8",
+        "beispiel": "248 ist durch 2 teilbar (Endziffer 8)"
     },
     {
-        "thema": "Kreisfläche",
-        "formel": "A = πr²",
-        "beispiel": "Radius r = 4cm<br>A = π × 4² ≈ 50,27cm²"
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Teilbarkeitsregeln - durch 3",
+        "formel": "Quersumme ist durch 3 teilbar",
+        "beispiel": "123: Quersumme 1+2+3 = 6, durch 3 teilbar"
     },
     {
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Teilbarkeitsregeln - durch 5",
+        "formel": "Endziffer ist 0 oder 5",
+        "beispiel": "125 ist durch 5 teilbar (Endziffer 5)"
+    },
+    {
+        "kategorie": "MATHEMATIK - ARITHMETIK",
+        "thema": "Teilbarkeitsregeln - durch 9",
+        "formel": "Quersumme ist durch 9 teilbar",
+        "beispiel": "216: Quersumme 2+1+6 = 9, durch 9 teilbar"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
         "thema": "Lineare Gleichung lösen",
         "formel": "ax + b = c  →  x = (c - b) / a",
         "beispiel": "3x + 5 = 20<br>3x = 15<br>x = 5"
     },
     {
-        "thema": "Prozentrechnung (Prozentwert)",
-        "formel": "W = (G × p) / 100",
-        "beispiel": "Grundwert G = 200€, Prozentsatz p = 15%<br>W = (200 × 15) / 100 = 30€"
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Lineare Funktion - Funktionsgleichung",
+        "formel": "y = mx + b",
+        "beispiel": "Steigung m = 2, y-Achsenabschnitt b = 3<br>y = 2x + 3"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Lineare Funktion - Steigung",
+        "formel": "m = (y₂ - y₁) / (x₂ - x₁)",
+        "beispiel": "Punkte P₁(1|2) und P₂(3|6)<br>m = (6 - 2) / (3 - 1) = 2"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Lineare Funktion - y-Achsenabschnitt",
+        "formel": "b = y - mx",
+        "beispiel": "Punkt P(2|7), Steigung m = 2<br>b = 7 - 2×2 = 3"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Quadratische Gleichung - Mitternachtsformel",
+        "formel": "x₁,₂ = (-b ± √(b² - 4ac)) / (2a)",
+        "beispiel": "x² - 5x + 6 = 0<br>x₁,₂ = (5 ± √(25 - 24)) / 2 = (5 ± 1) / 2<br>x₁ = 3, x₂ = 2"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Quadratische Gleichung - p-q-Formel",
+        "formel": "x² + px + q = 0  →  x₁,₂ = -p/2 ± √((p/2)² - q)",
+        "beispiel": "x² - 5x + 6 = 0<br>x₁,₂ = 2,5 ± √(6,25 - 6) = 2,5 ± 0,5<br>x₁ = 3, x₂ = 2"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Quadratische Funktion - Scheitelform",
+        "formel": "y = a(x - d)² + e",
+        "beispiel": "Scheitel S(2|3), a = 1<br>y = (x - 2)² + 3"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Quadratische Funktion - Normalform",
+        "formel": "y = ax² + bx + c",
+        "beispiel": "y = 2x² - 4x + 1"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Quadratische Funktion - Scheitelpunkt x",
+        "formel": "x_s = -b / (2a)",
+        "beispiel": "y = 2x² - 8x + 5<br>x_s = -(-8) / (2×2) = 2"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Quadratische Funktion - Scheitelpunkt y",
+        "formel": "y_s = f(x_s) = a·x_s² + b·x_s + c",
+        "beispiel": "y = 2x² - 8x + 5, x_s = 2<br>y_s = 2×4 - 8×2 + 5 = -3"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Binomische Formel 1",
+        "formel": "(a + b)² = a² + 2ab + b²",
+        "beispiel": "(x + 3)² = x² + 6x + 9"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Binomische Formel 2",
+        "formel": "(a - b)² = a² - 2ab + b²",
+        "beispiel": "(x - 4)² = x² - 8x + 16"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Binomische Formel 3",
+        "formel": "(a + b)(a - b) = a² - b²",
+        "beispiel": "(x + 5)(x - 5) = x² - 25"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Potenzgesetze - Multiplikation",
+        "formel": "a^m × a^n = a^(m+n)",
+        "beispiel": "2³ × 2² = 2⁵ = 32"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Potenzgesetze - Division",
+        "formel": "a^m / a^n = a^(m-n)",
+        "beispiel": "2⁵ / 2² = 2³ = 8"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Potenzgesetze - Potenzierung",
+        "formel": "(a^m)^n = a^(m×n)",
+        "beispiel": "(2³)² = 2⁶ = 64"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Potenzgesetze - Produkt potenzieren",
+        "formel": "(a × b)^n = a^n × b^n",
+        "beispiel": "(2 × 3)² = 2² × 3² = 4 × 9 = 36"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Potenzgesetze - Quotient potenzieren",
+        "formel": "(a / b)^n = a^n / b^n",
+        "beispiel": "(6 / 2)² = 6² / 2² = 36 / 4 = 9"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Wurzelgesetze - Multiplikation",
+        "formel": "√a × √b = √(a × b)",
+        "beispiel": "√4 × √9 = √36 = 6"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Wurzelgesetze - Division",
+        "formel": "√a / √b = √(a / b)",
+        "beispiel": "√36 / √4 = √9 = 3"
+    },
+    {
+        "kategorie": "MATHEMATIK - ALGEBRA",
+        "thema": "Wurzelgesetze - Potenzieren",
+        "formel": "(√a)^n = √(a^n) = a^(n/2)",
+        "beispiel": "(√4)² = 4"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Satz des Pythagoras",
+        "formel": "a² + b² = c²",
+        "beispiel": "Katheten: a = 3cm, b = 4cm<br>c² = 9 + 16 = 25<br>c = 5cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Satz des Pythagoras - Kathete a",
+        "formel": "a = √(c² - b²)",
+        "beispiel": "Hypotenuse c = 5cm, Kathete b = 4cm<br>a = √(25 - 16) = 3cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Satz des Pythagoras - Kathete b",
+        "formel": "b = √(c² - a²)",
+        "beispiel": "Hypotenuse c = 5cm, Kathete a = 3cm<br>b = √(25 - 9) = 4cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Höhensatz",
+        "formel": "h² = p × q",
+        "beispiel": "Hypotenusenabschnitte p = 4cm, q = 9cm<br>h = √(4 × 9) = 6cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Kathetensatz - Kathete a",
+        "formel": "a² = c × p",
+        "beispiel": "Hypotenuse c = 13cm, Abschnitt p = 4cm<br>a = √(13 × 4) = 7,21cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Kathetensatz - Kathete b",
+        "formel": "b² = c × q",
+        "beispiel": "Hypotenuse c = 13cm, Abschnitt q = 9cm<br>b = √(13 × 9) = 10,82cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Rechteck",
+        "formel": "A = a × b",
+        "beispiel": "Länge a = 5cm, Breite b = 3cm<br>A = 5 × 3 = 15cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Rechteck - Seite a",
+        "formel": "a = A / b",
+        "beispiel": "Fläche A = 15cm², Breite b = 3cm<br>a = 15 / 3 = 5cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Rechteck - Seite b",
+        "formel": "b = A / a",
+        "beispiel": "Fläche A = 15cm², Länge a = 5cm<br>b = 15 / 5 = 3cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Umfang Rechteck",
+        "formel": "U = 2a + 2b = 2(a + b)",
+        "beispiel": "Länge a = 5cm, Breite b = 3cm<br>U = 2×5 + 2×3 = 16cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Umfang Rechteck - Seite a",
+        "formel": "a = (U - 2b) / 2 = U/2 - b",
+        "beispiel": "Umfang U = 16cm, Breite b = 3cm<br>a = 16/2 - 3 = 5cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Umfang Rechteck - Seite b",
+        "formel": "b = (U - 2a) / 2 = U/2 - a",
+        "beispiel": "Umfang U = 16cm, Länge a = 5cm<br>b = 16/2 - 5 = 3cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Quadrat",
+        "formel": "A = a²",
+        "beispiel": "Seitenlänge a = 4cm<br>A = 4² = 16cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Quadrat - Seite",
+        "formel": "a = √A",
+        "beispiel": "Fläche A = 16cm²<br>a = √16 = 4cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Umfang Quadrat",
+        "formel": "U = 4a",
+        "beispiel": "Seitenlänge a = 4cm<br>U = 4 × 4 = 16cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Umfang Quadrat - Seite",
+        "formel": "a = U / 4",
+        "beispiel": "Umfang U = 16cm<br>a = 16 / 4 = 4cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Dreieck",
+        "formel": "A = (g × h) / 2",
+        "beispiel": "Grundseite g = 6cm, Höhe h = 4cm<br>A = (6 × 4) / 2 = 12cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Dreieck - Grundseite",
+        "formel": "g = (2 × A) / h",
+        "beispiel": "Fläche A = 12cm², Höhe h = 4cm<br>g = (2 × 12) / 4 = 6cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Dreieck - Höhe",
+        "formel": "h = (2 × A) / g",
+        "beispiel": "Fläche A = 12cm², Grundseite g = 6cm<br>h = (2 × 12) / 6 = 4cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Umfang Dreieck",
+        "formel": "U = a + b + c",
+        "beispiel": "Seiten: a = 3cm, b = 4cm, c = 5cm<br>U = 3 + 4 + 5 = 12cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Parallelogramm",
+        "formel": "A = g × h",
+        "beispiel": "Grundseite g = 8cm, Höhe h = 5cm<br>A = 8 × 5 = 40cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Parallelogramm - Grundseite",
+        "formel": "g = A / h",
+        "beispiel": "Fläche A = 40cm², Höhe h = 5cm<br>g = 40 / 5 = 8cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Parallelogramm - Höhe",
+        "formel": "h = A / g",
+        "beispiel": "Fläche A = 40cm², Grundseite g = 8cm<br>h = 40 / 8 = 5cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Umfang Parallelogramm",
+        "formel": "U = 2a + 2b",
+        "beispiel": "Seiten: a = 6cm, b = 4cm<br>U = 2×6 + 2×4 = 20cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Trapez",
+        "formel": "A = ((a + c) × h) / 2",
+        "beispiel": "Parallele Seiten a = 5cm, c = 3cm, Höhe h = 4cm<br>A = ((5 + 3) × 4) / 2 = 16cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Trapez - Höhe",
+        "formel": "h = (2 × A) / (a + c)",
+        "beispiel": "Fläche A = 16cm², a = 5cm, c = 3cm<br>h = (2 × 16) / (5 + 3) = 4cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Raute",
+        "formel": "A = (e × f) / 2",
+        "beispiel": "Diagonalen e = 6cm, f = 8cm<br>A = (6 × 8) / 2 = 24cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Raute - Diagonale e",
+        "formel": "e = (2 × A) / f",
+        "beispiel": "Fläche A = 24cm², Diagonale f = 8cm<br>e = (2 × 24) / 8 = 6cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Flächeninhalt Raute - Diagonale f",
+        "formel": "f = (2 × A) / e",
+        "beispiel": "Fläche A = 24cm², Diagonale e = 6cm<br>f = (2 × 24) / 6 = 8cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Kreisumfang",
+        "formel": "U = 2πr = πd",
+        "beispiel": "Radius r = 3cm<br>U = 2 × π × 3 ≈ 18,85cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Kreisumfang - Radius",
+        "formel": "r = U / (2π)",
+        "beispiel": "Umfang U = 18,85cm<br>r = 18,85 / (2π) ≈ 3cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Kreisumfang - Durchmesser",
+        "formel": "d = U / π",
+        "beispiel": "Umfang U = 18,85cm<br>d = 18,85 / π ≈ 6cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Kreisfläche",
+        "formel": "A = πr²",
+        "beispiel": "Radius r = 4cm<br>A = π × 4² ≈ 50,27cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Kreisfläche - Radius",
+        "formel": "r = √(A / π)",
+        "beispiel": "Fläche A = 50,27cm²<br>r = √(50,27 / π) ≈ 4cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Würfel",
+        "formel": "V = a³",
+        "beispiel": "Kantenlänge a = 3cm<br>V = 3³ = 27cm³"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Würfel - Kante",
+        "formel": "a = ∛V",
+        "beispiel": "Volumen V = 27cm³<br>a = ∛27 = 3cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Oberfläche Würfel",
+        "formel": "O = 6a²",
+        "beispiel": "Kantenlänge a = 3cm<br>O = 6 × 3² = 54cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Oberfläche Würfel - Kante",
+        "formel": "a = √(O / 6)",
+        "beispiel": "Oberfläche O = 54cm²<br>a = √(54 / 6) = 3cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Quader",
+        "formel": "V = a × b × c",
+        "beispiel": "Länge a = 4cm, Breite b = 3cm, Höhe c = 2cm<br>V = 4 × 3 × 2 = 24cm³"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Quader - Länge a",
+        "formel": "a = V / (b × c)",
+        "beispiel": "Volumen V = 24cm³, b = 3cm, c = 2cm<br>a = 24 / (3 × 2) = 4cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Quader - Breite b",
+        "formel": "b = V / (a × c)",
+        "beispiel": "Volumen V = 24cm³, a = 4cm, c = 2cm<br>b = 24 / (4 × 2) = 3cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Quader - Höhe c",
+        "formel": "c = V / (a × b)",
+        "beispiel": "Volumen V = 24cm³, a = 4cm, b = 3cm<br>c = 24 / (4 × 3) = 2cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Oberfläche Quader",
+        "formel": "O = 2(ab + ac + bc)",
+        "beispiel": "a = 4cm, b = 3cm, c = 2cm<br>O = 2(12 + 8 + 6) = 52cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Prisma",
+        "formel": "V = G × h",
+        "beispiel": "Grundfläche G = 12cm², Höhe h = 5cm<br>V = 12 × 5 = 60cm³"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Prisma - Grundfläche",
+        "formel": "G = V / h",
+        "beispiel": "Volumen V = 60cm³, Höhe h = 5cm<br>G = 60 / 5 = 12cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Prisma - Höhe",
+        "formel": "h = V / G",
+        "beispiel": "Volumen V = 60cm³, Grundfläche G = 12cm²<br>h = 60 / 12 = 5cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Oberfläche Prisma",
+        "formel": "O = 2G + M",
+        "beispiel": "Grundfläche G = 12cm², Mantelfläche M = 40cm²<br>O = 2×12 + 40 = 64cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Zylinder",
+        "formel": "V = πr²h",
+        "beispiel": "Radius r = 3cm, Höhe h = 5cm<br>V = π × 3² × 5 ≈ 141,37cm³"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Zylinder - Radius",
+        "formel": "r = √(V / (πh))",
+        "beispiel": "Volumen V = 141,37cm³, Höhe h = 5cm<br>r = √(141,37 / (π×5)) ≈ 3cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Zylinder - Höhe",
+        "formel": "h = V / (πr²)",
+        "beispiel": "Volumen V = 141,37cm³, Radius r = 3cm<br>h = 141,37 / (π×9) ≈ 5cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Oberfläche Zylinder",
+        "formel": "O = 2πr² + 2πrh = 2πr(r + h)",
+        "beispiel": "Radius r = 3cm, Höhe h = 5cm<br>O = 2π×3(3 + 5) ≈ 150,80cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Mantelfläche Zylinder",
+        "formel": "M = 2πrh",
+        "beispiel": "Radius r = 3cm, Höhe h = 5cm<br>M = 2π×3×5 ≈ 94,25cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Pyramide",
+        "formel": "V = (G × h) / 3",
+        "beispiel": "Grundfläche G = 24cm², Höhe h = 6cm<br>V = (24 × 6) / 3 = 48cm³"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Pyramide - Grundfläche",
+        "formel": "G = (3 × V) / h",
+        "beispiel": "Volumen V = 48cm³, Höhe h = 6cm<br>G = (3 × 48) / 6 = 24cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Pyramide - Höhe",
+        "formel": "h = (3 × V) / G",
+        "beispiel": "Volumen V = 48cm³, Grundfläche G = 24cm²<br>h = (3 × 48) / 24 = 6cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Kegel",
+        "formel": "V = (πr²h) / 3",
+        "beispiel": "Radius r = 3cm, Höhe h = 4cm<br>V = (π × 9 × 4) / 3 ≈ 37,70cm³"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Kegel - Radius",
+        "formel": "r = √((3V) / (πh))",
+        "beispiel": "Volumen V = 37,70cm³, Höhe h = 4cm<br>r = √((3×37,70) / (π×4)) ≈ 3cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Kegel - Höhe",
+        "formel": "h = (3V) / (πr²)",
+        "beispiel": "Volumen V = 37,70cm³, Radius r = 3cm<br>h = (3×37,70) / (π×9) ≈ 4cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Oberfläche Kegel",
+        "formel": "O = πr² + πrs",
+        "beispiel": "Radius r = 3cm, Mantellinie s = 5cm<br>O = π×9 + π×3×5 ≈ 75,40cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Mantelfläche Kegel",
+        "formel": "M = πrs",
+        "beispiel": "Radius r = 3cm, Mantellinie s = 5cm<br>M = π×3×5 ≈ 47,12cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Kugel",
+        "formel": "V = (4πr³) / 3",
+        "beispiel": "Radius r = 3cm<br>V = (4π × 27) / 3 ≈ 113,10cm³"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Volumen Kugel - Radius",
+        "formel": "r = ∛((3V) / (4π))",
+        "beispiel": "Volumen V = 113,10cm³<br>r = ∛((3×113,10) / (4π)) ≈ 3cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Oberfläche Kugel",
+        "formel": "O = 4πr²",
+        "beispiel": "Radius r = 3cm<br>O = 4π × 9 ≈ 113,10cm²"
+    },
+    {
+        "kategorie": "MATHEMATIK - GEOMETRIE",
+        "thema": "Oberfläche Kugel - Radius",
+        "formel": "r = √(O / (4π))",
+        "beispiel": "Oberfläche O = 113,10cm²<br>r = √(113,10 / (4π)) ≈ 3cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - TRIGONOMETRIE",
+        "thema": "Sinus",
+        "formel": "sin(α) = Gegenkathete / Hypotenuse",
+        "beispiel": "Gegenkathete = 3cm, Hypotenuse = 5cm<br>sin(α) = 3/5 = 0,6<br>α ≈ 36,87°"
+    },
+    {
+        "kategorie": "MATHEMATIK - TRIGONOMETRIE",
+        "thema": "Sinus - Gegenkathete",
+        "formel": "Gegenkathete = sin(α) × Hypotenuse",
+        "beispiel": "α = 30°, Hypotenuse = 10cm<br>Gegenkathete = sin(30°) × 10 = 5cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - TRIGONOMETRIE",
+        "thema": "Sinus - Hypotenuse",
+        "formel": "Hypotenuse = Gegenkathete / sin(α)",
+        "beispiel": "Gegenkathete = 5cm, α = 30°<br>Hypotenuse = 5 / sin(30°) = 10cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - TRIGONOMETRIE",
+        "thema": "Kosinus",
+        "formel": "cos(α) = Ankathete / Hypotenuse",
+        "beispiel": "Ankathete = 4cm, Hypotenuse = 5cm<br>cos(α) = 4/5 = 0,8<br>α ≈ 36,87°"
+    },
+    {
+        "kategorie": "MATHEMATIK - TRIGONOMETRIE",
+        "thema": "Kosinus - Ankathete",
+        "formel": "Ankathete = cos(α) × Hypotenuse",
+        "beispiel": "α = 30°, Hypotenuse = 10cm<br>Ankathete = cos(30°) × 10 ≈ 8,66cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - TRIGONOMETRIE",
+        "thema": "Kosinus - Hypotenuse",
+        "formel": "Hypotenuse = Ankathete / cos(α)",
+        "beispiel": "Ankathete = 8,66cm, α = 30°<br>Hypotenuse = 8,66 / cos(30°) ≈ 10cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - TRIGONOMETRIE",
+        "thema": "Tangens",
+        "formel": "tan(α) = Gegenkathete / Ankathete",
+        "beispiel": "Gegenkathete = 3cm, Ankathete = 4cm<br>tan(α) = 3/4 = 0,75<br>α ≈ 36,87°"
+    },
+    {
+        "kategorie": "MATHEMATIK - TRIGONOMETRIE",
+        "thema": "Tangens - Gegenkathete",
+        "formel": "Gegenkathete = tan(α) × Ankathete",
+        "beispiel": "α = 45°, Ankathete = 5cm<br>Gegenkathete = tan(45°) × 5 = 5cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - TRIGONOMETRIE",
+        "thema": "Tangens - Ankathete",
+        "formel": "Ankathete = Gegenkathete / tan(α)",
+        "beispiel": "Gegenkathete = 5cm, α = 45°<br>Ankathete = 5 / tan(45°) = 5cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - TRIGONOMETRIE",
+        "thema": "Sinussatz - Seite a",
+        "formel": "a / sin(α) = b / sin(β) = c / sin(γ)",
+        "beispiel": "b = 5cm, β = 30°, α = 60°<br>a = (b × sin(α)) / sin(β) = 8,66cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - TRIGONOMETRIE",
+        "thema": "Kosinussatz",
+        "formel": "c² = a² + b² - 2ab·cos(γ)",
+        "beispiel": "a = 5cm, b = 6cm, γ = 60°<br>c² = 25 + 36 - 2×5×6×0,5 = 31<br>c ≈ 5,57cm"
+    },
+    {
+        "kategorie": "MATHEMATIK - TRIGONOMETRIE",
+        "thema": "Winkelsumme im Dreieck",
+        "formel": "α + β + γ = 180°",
+        "beispiel": "α = 60°, β = 80°<br>γ = 180° - 60° - 80° = 40°"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Geschwindigkeit",
+        "formel": "v = s / t",
+        "beispiel": "Strecke s = 100m, Zeit t = 10s<br>v = 100 / 10 = 10 m/s"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Geschwindigkeit - Strecke",
+        "formel": "s = v × t",
+        "beispiel": "Geschwindigkeit v = 10 m/s, Zeit t = 5s<br>s = 10 × 5 = 50m"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Geschwindigkeit - Zeit",
+        "formel": "t = s / v",
+        "beispiel": "Strecke s = 100m, Geschwindigkeit v = 20 m/s<br>t = 100 / 20 = 5s"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Beschleunigung",
+        "formel": "a = Δv / Δt = (v - v₀) / t",
+        "beispiel": "v₀ = 0 m/s, v = 20 m/s, t = 4s<br>a = 20 / 4 = 5 m/s²"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Beschleunigung - Endgeschwindigkeit",
+        "formel": "v = v₀ + a × t",
+        "beispiel": "v₀ = 0 m/s, a = 5 m/s², t = 4s<br>v = 0 + 5×4 = 20 m/s"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Beschleunigung - Zeit",
+        "formel": "t = (v - v₀) / a",
+        "beispiel": "v₀ = 0 m/s, v = 20 m/s, a = 5 m/s²<br>t = 20 / 5 = 4s"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Beschleunigungsweg",
+        "formel": "s = v₀·t + (a·t²) / 2",
+        "beispiel": "v₀ = 0 m/s, a = 2 m/s², t = 5s<br>s = 0 + (2×25) / 2 = 25m"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Kraft (2. Newtonsches Gesetz)",
+        "formel": "F = m × a",
+        "beispiel": "Masse m = 10kg, Beschleunigung a = 2 m/s²<br>F = 10 × 2 = 20N"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Kraft - Masse",
+        "formel": "m = F / a",
+        "beispiel": "Kraft F = 20N, Beschleunigung a = 2 m/s²<br>m = 20 / 2 = 10kg"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Kraft - Beschleunigung",
+        "formel": "a = F / m",
+        "beispiel": "Kraft F = 20N, Masse m = 10kg<br>a = 20 / 10 = 2 m/s²"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Gewichtskraft",
+        "formel": "F_G = m × g",
+        "beispiel": "Masse m = 5kg, g = 9,81 m/s²<br>F_G = 5 × 9,81 = 49,05N"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Gewichtskraft - Masse",
+        "formel": "m = F_G / g",
+        "beispiel": "Gewichtskraft F_G = 49,05N, g = 9,81 m/s²<br>m = 49,05 / 9,81 = 5kg"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Dichte",
+        "formel": "ρ = m / V",
+        "beispiel": "Masse m = 200g, Volumen V = 100cm³<br>ρ = 200 / 100 = 2 g/cm³"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Dichte - Masse",
+        "formel": "m = ρ × V",
+        "beispiel": "Dichte ρ = 2 g/cm³, Volumen V = 50cm³<br>m = 2 × 50 = 100g"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Dichte - Volumen",
+        "formel": "V = m / ρ",
+        "beispiel": "Masse m = 100g, Dichte ρ = 2 g/cm³<br>V = 100 / 2 = 50cm³"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Arbeit",
+        "formel": "W = F × s",
+        "beispiel": "Kraft F = 20N, Strecke s = 5m<br>W = 20 × 5 = 100J"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Arbeit - Kraft",
+        "formel": "F = W / s",
+        "beispiel": "Arbeit W = 100J, Strecke s = 5m<br>F = 100 / 5 = 20N"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Arbeit - Strecke",
+        "formel": "s = W / F",
+        "beispiel": "Arbeit W = 100J, Kraft F = 20N<br>s = 100 / 20 = 5m"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Hubarbeit",
+        "formel": "W_Hub = m × g × h",
+        "beispiel": "Masse m = 10kg, Höhe h = 2m, g = 10 m/s²<br>W = 10 × 10 × 2 = 200J"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Hubarbeit - Höhe",
+        "formel": "h = W_Hub / (m × g)",
+        "beispiel": "Arbeit W = 200J, Masse m = 10kg, g = 10 m/s²<br>h = 200 / (10×10) = 2m"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Leistung",
+        "formel": "P = W / t",
+        "beispiel": "Arbeit W = 100J, Zeit t = 5s<br>P = 100 / 5 = 20W"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Leistung - Arbeit",
+        "formel": "W = P × t",
+        "beispiel": "Leistung P = 20W, Zeit t = 5s<br>W = 20 × 5 = 100J"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Leistung - Zeit",
+        "formel": "t = W / P",
+        "beispiel": "Arbeit W = 100J, Leistung P = 20W<br>t = 100 / 20 = 5s"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Leistung (alternativ)",
+        "formel": "P = F × v",
+        "beispiel": "Kraft F = 10N, Geschwindigkeit v = 5 m/s<br>P = 10 × 5 = 50W"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Kinetische Energie",
+        "formel": "E_kin = (m × v²) / 2",
+        "beispiel": "Masse m = 2kg, Geschwindigkeit v = 10 m/s<br>E_kin = (2 × 100) / 2 = 100J"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Kinetische Energie - Geschwindigkeit",
+        "formel": "v = √((2 × E_kin) / m)",
+        "beispiel": "E_kin = 100J, Masse m = 2kg<br>v = √(200 / 2) = 10 m/s"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Kinetische Energie - Masse",
+        "formel": "m = (2 × E_kin) / v²",
+        "beispiel": "E_kin = 100J, Geschwindigkeit v = 10 m/s<br>m = 200 / 100 = 2kg"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Potentielle Energie (Höhenenergie)",
+        "formel": "E_pot = m × g × h",
+        "beispiel": "Masse m = 5kg, Höhe h = 10m, g = 10 m/s²<br>E_pot = 5 × 10 × 10 = 500J"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Potentielle Energie - Höhe",
+        "formel": "h = E_pot / (m × g)",
+        "beispiel": "E_pot = 500J, Masse m = 5kg, g = 10 m/s²<br>h = 500 / (5×10) = 10m"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Potentielle Energie - Masse",
+        "formel": "m = E_pot / (g × h)",
+        "beispiel": "E_pot = 500J, Höhe h = 10m, g = 10 m/s²<br>m = 500 / (10×10) = 5kg"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Spannenergie",
+        "formel": "E_spann = (D × s²) / 2",
+        "beispiel": "Federkonstante D = 100 N/m, Auslenkung s = 0,2m<br>E_spann = (100 × 0,04) / 2 = 2J"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Hookesches Gesetz",
+        "formel": "F = D × s",
+        "beispiel": "Federkonstante D = 50 N/m, Auslenkung s = 0,1m<br>F = 50 × 0,1 = 5N"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Hookesches Gesetz - Federkonstante",
+        "formel": "D = F / s",
+        "beispiel": "Kraft F = 5N, Auslenkung s = 0,1m<br>D = 5 / 0,1 = 50 N/m"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Hookesches Gesetz - Auslenkung",
+        "formel": "s = F / D",
+        "beispiel": "Kraft F = 5N, Federkonstante D = 50 N/m<br>s = 5 / 50 = 0,1m"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Druck",
+        "formel": "p = F / A",
+        "beispiel": "Kraft F = 100N, Fläche A = 2m²<br>p = 100 / 2 = 50 Pa"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Druck - Kraft",
+        "formel": "F = p × A",
+        "beispiel": "Druck p = 50 Pa, Fläche A = 2m²<br>F = 50 × 2 = 100N"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Druck - Fläche",
+        "formel": "A = F / p",
+        "beispiel": "Kraft F = 100N, Druck p = 50 Pa<br>A = 100 / 50 = 2m²"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Schweredruck (hydrostatischer Druck)",
+        "formel": "p = ρ × g × h",
+        "beispiel": "Dichte ρ = 1000 kg/m³, Höhe h = 5m, g = 10 m/s²<br>p = 1000 × 10 × 5 = 50000 Pa"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Schweredruck - Höhe",
+        "formel": "h = p / (ρ × g)",
+        "beispiel": "Druck p = 50000 Pa, ρ = 1000 kg/m³, g = 10 m/s²<br>h = 50000 / (1000×10) = 5m"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Auftrieb (Archimedisches Prinzip)",
+        "formel": "F_A = ρ_Fl × V_K × g",
+        "beispiel": "Dichte Wasser ρ = 1000 kg/m³, Volumen V = 0,01m³, g = 10 m/s²<br>F_A = 1000 × 0,01 × 10 = 100N"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Hebel - Drehmoment",
+        "formel": "M = F × l",
+        "beispiel": "Kraft F = 10N, Hebelarm l = 0,5m<br>M = 10 × 0,5 = 5 Nm"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Hebel - Hebelgesetz",
+        "formel": "F₁ × l₁ = F₂ × l₂",
+        "beispiel": "F₁ = 20N, l₁ = 2m, l₂ = 4m<br>F₂ = (20 × 2) / 4 = 10N"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Goldene Regel der Mechanik",
+        "formel": "F₁ × s₁ = F₂ × s₂",
+        "beispiel": "F₁ = 100N, s₁ = 1m, s₂ = 10m<br>F₂ = (100 × 1) / 10 = 10N"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Impuls",
+        "formel": "p = m × v",
+        "beispiel": "Masse m = 2kg, Geschwindigkeit v = 5 m/s<br>p = 2 × 5 = 10 kg·m/s"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Impuls - Masse",
+        "formel": "m = p / v",
+        "beispiel": "Impuls p = 10 kg·m/s, Geschwindigkeit v = 5 m/s<br>m = 10 / 5 = 2kg"
+    },
+    {
+        "kategorie": "PHYSIK - MECHANIK",
+        "thema": "Impuls - Geschwindigkeit",
+        "formel": "v = p / m",
+        "beispiel": "Impuls p = 10 kg·m/s, Masse m = 2kg<br>v = 10 / 2 = 5 m/s"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Elektrische Stromstärke",
+        "formel": "I = Q / t",
+        "beispiel": "Ladung Q = 20C, Zeit t = 4s<br>I = 20 / 4 = 5A"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Elektrische Stromstärke - Ladung",
+        "formel": "Q = I × t",
+        "beispiel": "Stromstärke I = 5A, Zeit t = 4s<br>Q = 5 × 4 = 20C"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Elektrische Stromstärke - Zeit",
+        "formel": "t = Q / I",
+        "beispiel": "Ladung Q = 20C, Stromstärke I = 5A<br>t = 20 / 5 = 4s"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Ohmsches Gesetz",
+        "formel": "U = R × I",
+        "beispiel": "Widerstand R = 10Ω, Stromstärke I = 2A<br>U = 10 × 2 = 20V"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Ohmsches Gesetz - Widerstand",
+        "formel": "R = U / I",
+        "beispiel": "Spannung U = 20V, Stromstärke I = 2A<br>R = 20 / 2 = 10Ω"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Ohmsches Gesetz - Stromstärke",
+        "formel": "I = U / R",
+        "beispiel": "Spannung U = 20V, Widerstand R = 10Ω<br>I = 20 / 10 = 2A"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Elektrische Leistung",
+        "formel": "P = U × I",
+        "beispiel": "Spannung U = 230V, Stromstärke I = 0,5A<br>P = 230 × 0,5 = 115W"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Elektrische Leistung - Spannung",
+        "formel": "U = P / I",
+        "beispiel": "Leistung P = 115W, Stromstärke I = 0,5A<br>U = 115 / 0,5 = 230V"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Elektrische Leistung - Stromstärke",
+        "formel": "I = P / U",
+        "beispiel": "Leistung P = 115W, Spannung U = 230V<br>I = 115 / 230 = 0,5A"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Elektrische Leistung (mit Widerstand)",
+        "formel": "P = U² / R = I² × R",
+        "beispiel": "Spannung U = 10V, Widerstand R = 5Ω<br>P = 100 / 5 = 20W"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Elektrische Arbeit",
+        "formel": "W = U × I × t = P × t",
+        "beispiel": "Spannung U = 230V, Stromstärke I = 1A, Zeit t = 3600s<br>W = 230 × 1 × 3600 = 828000J = 0,23 kWh"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Elektrische Arbeit - Zeit",
+        "formel": "t = W / (U × I) = W / P",
+        "beispiel": "Arbeit W = 828000J, Leistung P = 230W<br>t = 828000 / 230 = 3600s"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Reihenschaltung - Gesamtwiderstand",
+        "formel": "R_ges = R₁ + R₂ + R₃ + ...",
+        "beispiel": "R₁ = 10Ω, R₂ = 20Ω, R₃ = 30Ω<br>R_ges = 10 + 20 + 30 = 60Ω"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Reihenschaltung - Stromstärke",
+        "formel": "I_ges = I₁ = I₂ = I₃",
+        "beispiel": "In Reihenschaltung ist die Stromstärke überall gleich"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Reihenschaltung - Spannung",
+        "formel": "U_ges = U₁ + U₂ + U₃ + ...",
+        "beispiel": "U₁ = 5V, U₂ = 10V, U₃ = 15V<br>U_ges = 5 + 10 + 15 = 30V"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Parallelschaltung - Gesamtwiderstand",
+        "formel": "1/R_ges = 1/R₁ + 1/R₂ + 1/R₃ + ...",
+        "beispiel": "R₁ = 20Ω, R₂ = 30Ω<br>1/R_ges = 1/20 + 1/30 = 5/60<br>R_ges = 12Ω"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Parallelschaltung - Spannung",
+        "formel": "U_ges = U₁ = U₂ = U₃",
+        "beispiel": "In Parallelschaltung ist die Spannung überall gleich"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Parallelschaltung - Stromstärke",
+        "formel": "I_ges = I₁ + I₂ + I₃ + ...",
+        "beispiel": "I₁ = 2A, I₂ = 3A, I₃ = 5A<br>I_ges = 2 + 3 + 5 = 10A"
+    },
+    {
+        "kategorie": "PHYSIK - ELEKTRIZITÄT",
+        "thema": "Spezifischer Widerstand",
+        "formel": "R = ρ × (l / A)",
+        "beispiel": "Kupfer ρ = 0,017 Ω·mm²/m, Länge l = 100m, Querschnitt A = 1,5mm²<br>R = 0,017 × (100/1,5) ≈ 1,13Ω"
+    },
+    {
+        "kategorie": "PHYSIK - WÄRMELEHRE",
+        "thema": "Wärmeenergie",
+        "formel": "Q = m × c × ΔT",
+        "beispiel": "Masse m = 2kg Wasser, c = 4190 J/(kg·K), ΔT = 50K<br>Q = 2 × 4190 × 50 = 419000J"
+    },
+    {
+        "kategorie": "PHYSIK - WÄRMELEHRE",
+        "thema": "Wärmeenergie - Masse",
+        "formel": "m = Q / (c × ΔT)",
+        "beispiel": "Q = 419000J, c = 4190 J/(kg·K), ΔT = 50K<br>m = 419000 / (4190×50) = 2kg"
+    },
+    {
+        "kategorie": "PHYSIK - WÄRMELEHRE",
+        "thema": "Wärmeenergie - Temperaturänderung",
+        "formel": "ΔT = Q / (m × c)",
+        "beispiel": "Q = 419000J, m = 2kg, c = 4190 J/(kg·K)<br>ΔT = 419000 / (2×4190) = 50K"
+    },
+    {
+        "kategorie": "PHYSIK - WÄRMELEHRE",
+        "thema": "Wärmeenergie - spezifische Wärmekapazität",
+        "formel": "c = Q / (m × ΔT)",
+        "beispiel": "Q = 419000J, m = 2kg, ΔT = 50K<br>c = 419000 / (2×50) = 4190 J/(kg·K)"
+    },
+    {
+        "kategorie": "PHYSIK - WÄRMELEHRE",
+        "thema": "Schmelzwärme",
+        "formel": "Q = m × q_s",
+        "beispiel": "Masse m = 0,5kg Eis, Schmelzwärme q_s = 334000 J/kg<br>Q = 0,5 × 334000 = 167000J"
+    },
+    {
+        "kategorie": "PHYSIK - WÄRMELEHRE",
+        "thema": "Verdampfungswärme",
+        "formel": "Q = m × q_v",
+        "beispiel": "Masse m = 0,1kg Wasser, Verdampfungswärme q_v = 2260000 J/kg<br>Q = 0,1 × 2260000 = 226000J"
+    },
+    {
+        "kategorie": "PHYSIK - WÄRMELEHRE",
+        "thema": "Celsius - Kelvin Umrechnung",
+        "formel": "T[K] = T[°C] + 273,15",
+        "beispiel": "20°C = 20 + 273,15 = 293,15K"
+    },
+    {
+        "kategorie": "PHYSIK - WÄRMELEHRE",
+        "thema": "Kelvin - Celsius Umrechnung",
+        "formel": "T[°C] = T[K] - 273,15",
+        "beispiel": "300K = 300 - 273,15 = 26,85°C"
+    },
+    {
+        "kategorie": "PHYSIK - WÄRMELEHRE",
+        "thema": "Gasgesetz (allgemein)",
+        "formel": "(p₁ × V₁) / T₁ = (p₂ × V₂) / T₂",
+        "beispiel": "p₁ = 100kPa, V₁ = 2L, T₁ = 300K, V₂ = 1L, T₂ = 300K<br>p₂ = (100×2×300) / (1×300) = 200kPa"
+    },
+    {
+        "kategorie": "PHYSIK - WÄRMELEHRE",
+        "thema": "Gesetz von Gay-Lussac (V konstant)",
+        "formel": "p₁ / T₁ = p₂ / T₂",
+        "beispiel": "p₁ = 100kPa, T₁ = 300K, T₂ = 600K<br>p₂ = (100×600) / 300 = 200kPa"
+    },
+    {
+        "kategorie": "PHYSIK - WÄRMELEHRE",
+        "thema": "Gesetz von Charles (p konstant)",
+        "formel": "V₁ / T₁ = V₂ / T₂",
+        "beispiel": "V₁ = 2L, T₁ = 300K, T₂ = 450K<br>V₂ = (2×450) / 300 = 3L"
+    },
+    {
+        "kategorie": "PHYSIK - WÄRMELEHRE",
+        "thema": "Gesetz von Boyle-Mariotte (T konstant)",
+        "formel": "p₁ × V₁ = p₂ × V₂",
+        "beispiel": "p₁ = 100kPa, V₁ = 3L, V₂ = 2L<br>p₂ = (100×3) / 2 = 150kPa"
+    },
+    {
+        "kategorie": "PHYSIK - OPTIK",
+        "thema": "Brechungsgesetz (Snellius)",
+        "formel": "n₁ × sin(α) = n₂ × sin(β)",
+        "beispiel": "Luft n₁ = 1, Wasser n₂ = 1,33, α = 30°<br>sin(β) = (1×sin(30°)) / 1,33<br>β ≈ 22,1°"
+    },
+    {
+        "kategorie": "PHYSIK - OPTIK",
+        "thema": "Brechzahl",
+        "formel": "n = c₀ / c",
+        "beispiel": "Lichtgeschwindigkeit Vakuum c₀ = 3×10⁸ m/s, in Glas c = 2×10⁸ m/s<br>n = 3/2 = 1,5"
+    },
+    {
+        "kategorie": "PHYSIK - OPTIK",
+        "thema": "Linsengleichung",
+        "formel": "1/f = 1/g + 1/b",
+        "beispiel": "Gegenstandsweite g = 30cm, Bildweite b = 15cm<br>1/f = 1/30 + 1/15 = 3/30<br>f = 10cm"
+    },
+    {
+        "kategorie": "PHYSIK - OPTIK",
+        "thema": "Linsengleichung - Gegenstandsweite",
+        "formel": "g = (b × f) / (b - f)",
+        "beispiel": "Bildweite b = 15cm, Brennweite f = 10cm<br>g = (15×10) / (15-10) = 30cm"
+    },
+    {
+        "kategorie": "PHYSIK - OPTIK",
+        "thema": "Linsengleichung - Bildweite",
+        "formel": "b = (g × f) / (g - f)",
+        "beispiel": "Gegenstandsweite g = 30cm, Brennweite f = 10cm<br>b = (30×10) / (30-10) = 15cm"
+    },
+    {
+        "kategorie": "PHYSIK - OPTIK",
+        "thema": "Abbildungsmaßstab",
+        "formel": "V = B / G = b / g",
+        "beispiel": "Bildgröße B = 2cm, Gegenstandsgröße G = 8cm<br>V = 2/8 = 0,25"
+    },
+    {
+        "kategorie": "PHYSIK - OPTIK",
+        "thema": "Abbildungsmaßstab - Bildgröße",
+        "formel": "B = V × G = (b × G) / g",
+        "beispiel": "Maßstab V = 0,25, Gegenstandsgröße G = 8cm<br>B = 0,25 × 8 = 2cm"
+    },
+    {
+        "kategorie": "PHYSIK - OPTIK",
+        "thema": "Abbildungsmaßstab - Gegenstandsgröße",
+        "formel": "G = B / V = (g × B) / b",
+        "beispiel": "Bildgröße B = 2cm, Maßstab V = 0,25<br>G = 2 / 0,25 = 8cm"
+    },
+    {
+        "kategorie": "PHYSIK - OPTIK",
+        "thema": "Reflexionsgesetz",
+        "formel": "Einfallswinkel α = Reflexionswinkel α'",
+        "beispiel": "Lichtstrahl trifft mit 30° auf Spiegel<br>Reflexionswinkel = 30°"
+    },
+    {
+        "kategorie": "PHYSIK - OPTIK",
+        "thema": "Brechungswinkel Grenzwinkel",
+        "formel": "sin(α_g) = n₂ / n₁",
+        "beispiel": "Übergang Wasser (n₁=1,33) zu Luft (n₂=1)<br>sin(α_g) = 1/1,33<br>α_g ≈ 48,8°"
+    },
+    {
+        "kategorie": "PHYSIK - RADIOAKTIVITÄT",
+        "thema": "Halbwertszeit - verbleibende Masse",
+        "formel": "m(t) = m₀ × (1/2)^(t/T)",
+        "beispiel": "Anfangsmasse m₀ = 100g, Halbwertszeit T = 2 Jahre, Zeit t = 6 Jahre<br>m = 100 × (1/2)³ = 12,5g"
+    },
+    {
+        "kategorie": "PHYSIK - RADIOAKTIVITÄT",
+        "thema": "Halbwertszeit - Anzahl Halbwertszeiten",
+        "formel": "n = t / T",
+        "beispiel": "Zeit t = 6 Jahre, Halbwertszeit T = 2 Jahre<br>n = 6 / 2 = 3"
+    },
+    {
+        "kategorie": "PHYSIK - RADIOAKTIVITÄT",
+        "thema": "Aktivität",
+        "formel": "A = λ × N",
+        "beispiel": "Zerfallskonstante λ = 0,1/s, Teilchenzahl N = 1000<br>A = 0,1 × 1000 = 100 Bq"
+    },
+    {
+        "kategorie": "PHYSIK - RADIOAKTIVITÄT",
+        "thema": "Äquivalentdosis",
+        "formel": "H = D × Q",
+        "beispiel": "Energiedosis D = 0,01 Gy, Qualitätsfaktor Q = 20<br>H = 0,01 × 20 = 0,2 Sv"
+    },
+    {
+        "kategorie": "PHYSIK - AKUSTIK",
+        "thema": "Schallgeschwindigkeit",
+        "formel": "v = λ × f",
+        "beispiel": "Wellenlänge λ = 0,68m, Frequenz f = 500 Hz<br>v = 0,68 × 500 = 340 m/s"
+    },
+    {
+        "kategorie": "PHYSIK - AKUSTIK",
+        "thema": "Schallgeschwindigkeit - Wellenlänge",
+        "formel": "λ = v / f",
+        "beispiel": "Schallgeschwindigkeit v = 340 m/s, Frequenz f = 500 Hz<br>λ = 340 / 500 = 0,68m"
+    },
+    {
+        "kategorie": "PHYSIK - AKUSTIK",
+        "thema": "Schallgeschwindigkeit - Frequenz",
+        "formel": "f = v / λ",
+        "beispiel": "Schallgeschwindigkeit v = 340 m/s, Wellenlänge λ = 0,68m<br>f = 340 / 0,68 = 500 Hz"
+    },
+    {
+        "kategorie": "PHYSIK - AKUSTIK",
+        "thema": "Schallpegel",
+        "formel": "L = 10 × log(I / I₀)",
+        "beispiel": "Intensität I = 0,001 W/m², Bezugsintensität I₀ = 10⁻¹² W/m²<br>L = 10 × log(10⁹) = 90 dB"
     }
 ]
