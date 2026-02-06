@@ -38,12 +38,12 @@
             flex: 1;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             padding: 40px 20px;
         }
 
         .formeln-container {
-            max-width: 1000px;
+            max-width: 1200px;
             width: 100%;
             padding: 20px;
             animation: fadeIn 0.6s ease;
@@ -96,6 +96,46 @@
 
         .search-box::placeholder {
             color: #999;
+        }
+
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .filter-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(255, 215, 0, 0.2));
+            border-color: #FFD700;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #1a1545;
+            border-color: #FFD700;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+        }
+
+        .stats-info {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            margin-bottom: 15px;
         }
 
         .print-btn {
@@ -156,6 +196,19 @@
 
         .formel-header:hover {
             background: linear-gradient(90deg, #2a2555 0%, #4b4598 100%);
+        }
+
+        .formel-header-content {
+            flex: 1;
+        }
+
+        .formel-kategorie {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #FFD700;
+            margin-bottom: 5px;
+            font-weight: 600;
         }
 
         .formel-header h3 {
@@ -251,7 +304,7 @@
                 background: white !important;
             }
             
-            header, footer, .formeln-tools, .print-btn {
+            header, footer, .formeln-tools, .print-btn, .stats-info {
                 display: none !important;
             }
             
@@ -284,6 +337,7 @@
                 border-bottom: 2px solid #3b3588 !important;
             }
             
+            .formel-kategorie,
             .formel-header h3 {
                 color: #3b3588 !important;
             }
@@ -306,7 +360,7 @@
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             header h1 {
                 font-size: 22px;
             }
@@ -322,6 +376,11 @@
             .search-box {
                 padding: 16px 20px;
                 font-size: 16px;
+            }
+
+            .filter-btn {
+                padding: 10px 18px;
+                font-size: 12px;
             }
 
             .print-btn {
@@ -340,7 +399,7 @@
 </head>
 <body>
     <header>
-        <h1>📐 Mathe - Formeln</h1>
+        <h1>📐 Mathe & Physik - Formeln</h1>
     </header>
 
     <main>
@@ -349,6 +408,10 @@
             
             <div class="formeln-tools">
                 <input type="text" class="search-box" id="searchBox" placeholder="🔍 Formel suchen..." oninput="sucheFormeln()">
+                
+                <div class="filter-container" id="filterContainer"></div>
+                
+                <div class="stats-info" id="statsInfo"></div>
             </div>
             
             <button class="print-btn" onclick="window.print()">🖨️ Als PDF drucken</button>
@@ -367,40 +430,118 @@
     </footer>
 
     <script>
+        let alleFormeln = [];
+        let aktiveKategorie = 'alle';
+
         // Formeln aus JSON laden
         async function ladeFormeln() {
             try {
                 const response = await fetch('formeln.json');
-                const formelnDaten = await response.json();
+                alleFormeln = await response.json();
                 
-                const grid = document.getElementById('formelnGrid');
-                grid.innerHTML = '';
+                // Kategorien extrahieren
+                const kategorien = [...new Set(alleFormeln.map(f => f.kategorie))].sort();
                 
-                formelnDaten.forEach((formel, index) => {
-                    const card = document.createElement('div');
-                    card.className = 'formel-card';
-                    card.id = `formel-${index}`;
-                    card.setAttribute('data-formel', formel.thema.toLowerCase() + ' ' + formel.formel.toLowerCase());
-                    card.innerHTML = `
-                        <div class="formel-header" onclick="toggleFormel(${index})">
-                            <h3>${formel.thema}</h3>
-                            <span class="formel-arrow">▼</span>
-                        </div>
-                        <div class="formel-content" id="content-${index}">
-                            <div class="formel-inner">
-                                <div class="formel-label">Formel:</div>
-                                <div class="formel-text">${formel.formel}</div>
-                                <div class="formel-label">Beispiel:</div>
-                                <div class="beispiel-text">${formel.beispiel}</div>
-                            </div>
-                        </div>
-                    `;
-                    grid.appendChild(card);
-                });
+                // Filter-Buttons erstellen
+                erstelleFilterButtons(kategorien);
+                
+                // Formeln anzeigen
+                zeigeFormeln(alleFormeln);
+                
+                // Statistik aktualisieren
+                aktualisiereStatistik(alleFormeln.length, alleFormeln.length);
+                
             } catch (error) {
                 console.error('Fehler beim Laden der Formeln:', error);
-                document.getElementById('formelnGrid').innerHTML = '<p style="color: white; text-align: center;">Fehler beim Laden der Formeln. Bitte Datei überprüfen lassen.</p>';
+                document.getElementById('formelnGrid').innerHTML = '<p style="color: white; text-align: center;">Fehler beim Laden der Formeln. Bitte Datei überprüfen.</p>';
             }
+        }
+
+        // Filter-Buttons erstellen
+        function erstelleFilterButtons(kategorien) {
+            const container = document.getElementById('filterContainer');
+            
+            // "Alle" Button
+            const alleBtn = document.createElement('button');
+            alleBtn.className = 'filter-btn active';
+            alleBtn.textContent = '📚 Alle';
+            alleBtn.onclick = () => filtereNachKategorie('alle');
+            container.appendChild(alleBtn);
+            
+            // Kategorie-Buttons
+            kategorien.forEach(kat => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                
+                // Icon basierend auf Kategorie
+                let icon = '';
+                if (kat.includes('MATHEMATIK')) icon = '🔢';
+                else if (kat.includes('PHYSIK')) icon = '⚛️';
+                
+                btn.textContent = icon + ' ' + kat.replace('MATHEMATIK - ', '').replace('PHYSIK - ', '');
+                btn.setAttribute('data-kategorie', kat);
+                btn.onclick = () => filtereNachKategorie(kat);
+                container.appendChild(btn);
+            });
+        }
+
+        // Nach Kategorie filtern
+        function filtereNachKategorie(kategorie) {
+            aktiveKategorie = kategorie;
+            
+            // Button-States aktualisieren
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            if (kategorie === 'alle') {
+                document.querySelector('.filter-btn').classList.add('active');
+            } else {
+                document.querySelector(`[data-kategorie="${kategorie}"]`).classList.add('active');
+            }
+            
+            // Formeln filtern und anzeigen
+            const gefilterteFormeln = kategorie === 'alle' 
+                ? alleFormeln 
+                : alleFormeln.filter(f => f.kategorie === kategorie);
+            
+            zeigeFormeln(gefilterteFormeln);
+            aktualisiereStatistik(gefilterteFormeln.length, alleFormeln.length);
+            
+            // Suchfeld zurücksetzen
+            document.getElementById('searchBox').value = '';
+        }
+
+        // Formeln anzeigen
+        function zeigeFormeln(formeln) {
+            const grid = document.getElementById('formelnGrid');
+            grid.innerHTML = '';
+            
+            formeln.forEach((formel, index) => {
+                const card = document.createElement('div');
+                card.className = 'formel-card';
+                card.id = `formel-${index}`;
+                card.setAttribute('data-formel', (formel.thema + ' ' + formel.formel + ' ' + formel.kategorie).toLowerCase());
+                card.setAttribute('data-kategorie', formel.kategorie);
+                card.innerHTML = `
+                    <div class="formel-header" onclick="toggleFormel(${index})">
+                        <div class="formel-header-content">
+                            <div class="formel-kategorie">${formel.kategorie}</div>
+                            <h3>${formel.thema}</h3>
+                        </div>
+                        <span class="formel-arrow">▼</span>
+                    </div>
+                    <div class="formel-content" id="content-${index}">
+                        <div class="formel-inner">
+                            <div class="formel-label">Formel:</div>
+                            <div class="formel-text">${formel.formel}</div>
+                            <div class="formel-label">Beispiel:</div>
+                            <div class="beispiel-text">${formel.beispiel}</div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
         }
 
         // Formel aufklappen/zuklappen
@@ -417,14 +558,31 @@
             const searchTerm = searchBox.value.toLowerCase();
             const cards = document.querySelectorAll('.formel-card');
             
+            let sichtbareAnzahl = 0;
+            
             cards.forEach(card => {
                 const formelData = card.getAttribute('data-formel');
-                if (formelData.includes(searchTerm)) {
+                const kategorie = card.getAttribute('data-kategorie');
+                
+                // Filter nach Kategorie UND Suchbegriff
+                const passt = (aktiveKategorie === 'alle' || kategorie === aktiveKategorie) 
+                           && formelData.includes(searchTerm);
+                
+                if (passt) {
                     card.style.display = 'block';
+                    sichtbareAnzahl++;
                 } else {
                     card.style.display = 'none';
                 }
             });
+            
+            aktualisiereStatistik(sichtbareAnzahl, alleFormeln.length);
+        }
+
+        // Statistik aktualisieren
+        function aktualisiereStatistik(angezeigt, gesamt) {
+            const info = document.getElementById('statsInfo');
+            info.textContent = `${angezeigt} von ${gesamt} Formeln angezeigt`;
         }
 
         // Formeln beim Laden der Seite laden
